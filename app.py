@@ -24,12 +24,9 @@ def contact():
 
 @app.route('/map')
 def show_map():
-    # Define colors for each region, e.g., {'Scotland': 'red', 'Wales': 'blue'}
-    region_colors = {'Scotland': '#ff0000', 'Wales': '#0000ff'}
-    return render_template('uk_regions_map.html', region_colors=region_colors)
-
+    return render_template('static/uk_regions_map.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
-app = Flask(__name__)
+
 
