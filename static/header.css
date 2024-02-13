@@ -1,0 +1,28 @@
+.header {
+  background-color: #e8f5e9; /* Light green background */
+  padding: 10px 20px; /* Padding for top/bottom and left/right */
+  text-align: center;
+  position: relative; /* Needed for absolute positioning of the logo */
+}
+
+.header-logo {
+  position: absolute; /* Position logo absolutely within header */
+  width: 81px; /* Adjust width as needed */
+  height: 54px;
+  left: 20px; /* Space from left */
+  top: 50%;
+  transform: translateY(-50%); /* Center logo vertically */
+}
+
+.header button {
+  background-color: #4CAF50; /* Green button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 10px; /* Space between buttons */
+}
+
+.header button:hover {
+  background-color: #43a047; /* Darker green on hover */
+}

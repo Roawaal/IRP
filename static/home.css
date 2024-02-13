@@ -1,29 +1,10 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+p {
+  display: block;
+  margin-top: 1em;
+  font-size: 16px; /* Sets the font size */
+  color: #333; /* Sets the text color */
+  line-height: 1.5; /* Sets the line height */
+  margin-bottom: 20px; /* Adds space below paragraphs */
+  text-align: justify; /* Justifies the text */
 }
 
-h1 {
-    color: #333;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 16px 0;
-    border: none;
-    cursor: pointer;
-    width: 200px;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-a {
-    text-decoration: none;
-}

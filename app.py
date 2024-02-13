@@ -5,31 +5,39 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    dynamic_content = "This is dynamic content"
+    return render_template('home.html', content=dynamic_content)
 
 @app.route('/data-visualization')
 def data_visualization():
-    return render_template('data_visualization.html')
+    dynamic_content = "This is dynamic content"
+    return render_template('data_visualization.html', content=dynamic_content)
 
 @app.route('/regulations')
 def regulations():
-    return render_template('regulations.html')
+    dynamic_content = "This is dynamic content"
+    return render_template('regulations.html', content=dynamic_content)
 
 @app.route('/public-opinion-analysis')
 def public_opinion_analysis():
-    return render_template('public_opinion_analysis.html')
+    dynamic_content = "This is dynamic content"
+    return render_template('public_opinion_analysis.html', content=dynamic_content)
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    dynamic_content = "This is dynamic content"
+    return render_template('contact.html', content=dynamic_content)
 
 @app.route('/map')
 def show_map():
     return render_template('static/uk_regions_map.html')
 
-@app.route('/2022england')
+
+@app.route('/2022')
 def index():
-    return render_template('2022england.html')
+    return render_template('2022.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

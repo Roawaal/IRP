@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+    <title>Home Page</title>
+</head>
+<body>
+    <div>{% include 'header.html' %}</div>
+    <p>Brexit officially took place at 23:00 GMT on 31 January 2020 (00:00 1 February 2020 CET).
+       After 4 years, British people are coming to realize the effects of Brexit on their own lives and livelihoods.</p>
+    <p>According to the survey, some 70% of the farmers who grow cereals said Brexit had been negative for their businesses,
+        while 76% of oilseed rape growers felt that way. Similarly, 68% of farmers with beef cattle, dairy cows or sheep
+        had a negative perception. FarmersWeekly 23 Jun 2023</p>
+    <p>...</p>
+    <p>...</p>
+    <div style="background-color: #f2f2f2; padding: 20px; border-radius: 5px; height:480px; width:1000px;">{% include 'tiff2000_2022.html' %}</div>
+</body>
+
+</html>
