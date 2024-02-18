@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 30%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 30%; margin: 0">
+  <div id="container" style="height: 30%"></div>
+
+
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js"></script>
+  <script type="text/javascript">
+    var dom1 = document.getElementById('container1');
+    var myChart1 = echarts.init(dom1, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+
+    var option1;
+
+    option1 = {
+    title: {
+        text: ''
+    },
+    color: '#57A6AF',
+    xAxis: {
+
+        axisLine: {
+            onZero: false,
+            symbol: ['none', 'arrow'],
+            lineStyle: {
+                color: '#b1b1b1',
+                width: 3
+            }
+        },
+        axisLabel: {
+            color: '#000'
+        },
+        axisTick: {
+            show: false
+        },
+        data: ['6 January 2020', '31 January 2020', '24 February 2022', '19th July 2022']
+    },
+    yAxis: {
+        axisLine: {
+            show: false
+        },
+        axisLabel: {
+            show: false
+        },
+        axisTick: {
+            show: false
+        },
+        interval: 0
+
+
+    },
+    series: [{
+        type: 'scatter',
+        label: {
+            show: true,
+            position: 'top',
+            textStyle: {
+                // color: '#fff',
+            },
+            formatter: function (params) {
+                // Custom formatter for each day
+                var events = ['COVID-19 pandemic in UK', 'Brexit', 'Russia invaded Ukraine in an escalation of the Russo-Ukrainian War that started in 2014', 'Highest UK temperature 40.3C'];
+                return events[params.dataIndex];
+            }
+        },
+        symbolSize: 15,
+        // Assuming each value represents the number of events on that day
+        data: [1, 2, 4, 2] // Number of events for Sun, Mon, ..., Sat
+    }
+    ]
+};
+        if (option1 && typeof option1 === 'object') {
+      myChart1.setOption(option1);
+    }
+
+    window.addEventListener('resize', myChart1.resize);
+  </script>
+</body>
+</html>

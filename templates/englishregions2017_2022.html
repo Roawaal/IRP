@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js"></script>
+
+  <script type="text/javascript">
+    var dom0 = document.getElementById('container0');
+    var myChart0 = echarts.init(dom0, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option0;
+
+    setTimeout(function () {
+  option0 = {
+    legend: {},
+    tooltip: {
+      trigger: 'axis',
+      showContent: false
+    },
+    dataset: {
+      source: [
+        ['Year', '2017', '2018', '2019', '2020', '2021', '2022'],
+        ['North East', 176, 147, 162, 147, 217, 258],
+        ['North West', 310, 195, 225, 242, 290, 383],
+        ['Yorkshire and the Humber', 412, 335, 415, 370, 568, 622],
+        ['East Midlands', 614, 580, 620, 591, 882, 939],
+        ['West Midlands', 422, 373, 427, 469, 601, 644],
+        ['East of England', 643, 602, 739, 670, 1017, 1094],
+        ['South East of England', 477, 457, 505, 518, 688, 813],
+        ['South West of England', 771, 603, 634, 682, 810, 979]
+
+      ]
+    },
+    xAxis: { type: 'category' },
+    yAxis: { gridIndex: 0 },
+    grid: { top: '55%' },
+    series: [
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'pie',
+        id: 'pie',
+        radius: '30%',
+        center: ['50%', '25%'],
+        emphasis: {
+          focus: 'self'
+        },
+        label: {
+          formatter: '{b}: {@2017} ({d}%)'
+        },
+        encode: {
+          itemName: 'Year',
+          value: '2017',
+          tooltip: '2017'
+        }
+      }
+    ]
+  };
+  myChart0.on('updateAxisPointer', function (event) {
+    const xAxisInfo = event.axesInfo[0];
+    if (xAxisInfo) {
+      const dimension = xAxisInfo.value + 1;
+      myChart0.setOption({
+        series: {
+          id: 'pie',
+          label: {
+            formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+          },
+          encode: {
+            value: dimension,
+            tooltip: dimension
+          }
+        }
+      });
+    }
+  });
+  myChart0.setOption(option0);
+});
+
+    if (option0 && typeof option0 === 'object') {
+      myChart0.setOption(option0);
+    }
+
+    window.addEventListener('resize', myChart0.resize);
+  </script>
+</body>
+</html>
