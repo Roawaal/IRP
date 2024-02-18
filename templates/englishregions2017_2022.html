@@ -4,23 +4,23 @@
   <meta charset="utf-8">
 </head>
 <body style="height: 100%; margin: 0">
-  <div id="container0" style="height: 100%"></div>
+  <div id="container" style="height: 100%"></div>
 
   
   <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js"></script>
 
   <script type="text/javascript">
-    var dom = document.getElementById('container');
-    var myChart = echarts.init(dom, null, {
+    var dom0 = document.getElementById('container0');
+    var myChart0 = echarts.init(dom0, null, {
       renderer: 'canvas',
       useDirtyRect: false
     });
     var app = {};
     
-    var option;
+    var option0;
 
     setTimeout(function () {
-  option = {
+  option0 = {
     legend: {},
     tooltip: {
       trigger: 'axis',
@@ -111,11 +111,11 @@
       }
     ]
   };
-  myChart.on('updateAxisPointer', function (event) {
+  myChart0.on('updateAxisPointer', function (event) {
     const xAxisInfo = event.axesInfo[0];
     if (xAxisInfo) {
       const dimension = xAxisInfo.value + 1;
-      myChart.setOption({
+      myChart0.setOption({
         series: {
           id: 'pie',
           label: {
@@ -129,14 +129,14 @@
       });
     }
   });
-  myChart.setOption(option);
+  myChart0.setOption(option0);
 });
 
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
+    if (option0 && typeof option0 === 'object') {
+      myChart0.setOption(option0);
     }
 
-    window.addEventListener('resize', myChart.resize);
+    window.addEventListener('resize', myChart0.resize);
   </script>
 </body>
 </html>

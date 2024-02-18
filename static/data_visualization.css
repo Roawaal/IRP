@@ -17,3 +17,23 @@ h5 {
   padding: 1px;
   margin: 20px auto;
 }
+
+.englishregions-style {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 5px;
+  height:480px;
+  width:1000px;
+}
+
+.event-style {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 5px;
+  height:160px;
+  width:1000px;"
+}

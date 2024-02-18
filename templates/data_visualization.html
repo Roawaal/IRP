@@ -7,6 +7,11 @@
 </head>
 <body>
     <div>{% include 'header.html' %}</div>
+    <p>For UK agriculture, 2020 was marked not only by Brexit but also by Covid-19 pandemic.
+        In the following years, the UK also experienced significant global events and
+        <a href="https://www.metoffice.gov.uk/weather/learn-about/past-uk-weather-events">extreme weather(heatwave/storms/......) conditions</a>.
+    </p>
+    <div id="container1" class="event-style">{% include 'event.html' %}</div>
     <p>Although Scotland, Wales, Northern Ireland are important contributors to Uk agricultural output in monetary terms,
         their datasets are not as comprehensive as English datasets. So we'll focus on 2017-2022 England and separate it by regions </p>
     <p>Other constituent countries' datasets can be found by below links</p>
@@ -14,23 +19,8 @@
     <h5><a href="https://www.gov.wales/farm-incomes">Farm incomes in wales including forecasts</a></h5>
     <h5><a href="https://www.daera-ni.gov.uk/articles/ni-agricultural-incomes">TIFF in Northern Ireland</a></h5>
 
-    <div id="container0" style="background-color: #f2f2f2;
-            display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 20px;
-        border-radius: 5px;
-        height:480px;
-        width:1000px;">{% include 'englishregions2017_2022.html' %}</div>
+    <div id="container0" class="englishregions-style">{% include 'englishregions2017_2022.html' %}</div>
     <iframe src="{{ url_for('static', filename='uk_regions_map.html') }}" style="height:480px;width:600px;"></iframe>
-    <div id="container1" style="background-color: #f2f2f2;
-            display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 20px;
-        border-radius: 5px;
-        height:160px;
-        width:1000px;">{% include 'event.html' %}</div>
     <h1>Data Graphs</h1>
     <h1>Distribution of farming types in the UK</h1>
 </body>
