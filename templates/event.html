@@ -39,7 +39,7 @@
         axisTick: {
             show: false
         },
-        data: ['6 January 2020', '31 January 2020', '24 February 2022', '19th July 2022']
+        data: ['6 January 2020', '31 January 2020', '24 February 2022', '19th July 2022','October 2022']
     },
     yAxis: {
         axisLine: {
@@ -65,13 +65,13 @@
             },
             formatter: function (params) {
                 // Custom formatter for each day
-                var events = ['COVID-19 pandemic in UK', 'Brexit', 'Russia invaded Ukraine in an escalation of the Russo-Ukrainian War that started in 2014', 'Highest UK temperature 40.3C'];
+                var events = ['COVID-19 pandemic in UK', 'Brexit', 'Russia invaded Ukraine in an escalation of the Russo-Ukrainian War that started in 2014', 'Highest UK temperature 40.3C', 'The annual rate of inflation reached 11.1%'];
                 return events[params.dataIndex];
             }
         },
         symbolSize: 15,
         // Assuming each value represents the number of events on that day
-        data: [1, 2, 4, 2] // Number of events for Sun, Mon, ..., Sat
+        data: [1, 2, 4, 2, 5] // Number of events for Sun, Mon, ..., Sat
     }
     ]
 };

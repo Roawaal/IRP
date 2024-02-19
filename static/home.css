@@ -7,3 +7,23 @@ p {
   padding: 5px;
   margin: 20px auto;
 }
+
+.tiff-style {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        border-radius: 5px;
+        height:75%;
+        width:90%;
+}
+
+.agri-style {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        border-radius: 5px;
+        height:75%;
+        width:90%;
+}
