@@ -35,5 +35,32 @@ h5 {
   padding: 20px;
   border-radius: 5px;
   height:160px;
-  width:1000px;"
+  width:1000px;
 }
+
+.parallel {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.style-2022 {
+  flex: 1; /* This makes both divs take up equal width */
+  display: inline-block;
+  align-content: center;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #bddabd;
+  height:480px;
+  width: 480px;
+}
+
+.analyze {
+  flex: 1; /* This makes both divs take up equal width */
+  padding: 20px;
+  display: inline-block;
+  text-align: center;
+  height:480px;
+  width: 480px;
+}
+
