@@ -35,7 +35,7 @@
     }
   },
   legend: {
-    data: ['UK GDP', 'Agriculture’s contribution to GDP']
+    data: ['UK GDP at 2024 $ prices', 'Agriculture’s contribution to GDP']
   },
   xAxis: [
     {
@@ -49,7 +49,7 @@
   yAxis: [
     {
       type: 'value',
-      name: 'UK GDP',
+      name: 'UK GDP at 2024 $ prices',
       min: 1500,
       max: 3500,
       interval: 500,
@@ -61,8 +61,8 @@
       type: 'value',
       name: 'Agriculture’s contribution to GDP',
       min: 0,
-      max: 0.8,
-      interval: 0.05,
+      max: 1.5,
+      interval: 0.1,
       axisLabel: {
         formatter: '{value} %'
       }
@@ -70,7 +70,7 @@
   ],
   series: [
     {
-      name: 'UK GDP',
+      name: 'UK GDP at 2024 $ prices',
       type: 'bar',
       tooltip: {
         valueFormatter: function (value) {

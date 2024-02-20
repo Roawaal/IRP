@@ -8,22 +8,33 @@
     <div>{% include 'header.html' %}</div>
     <p>Brexit officially took place at 23:00 GMT on 31 January 2020 (00:00 1 February 2020 CET).
      After 4 years, British people are coming to realize the effects of Brexit on their own lives and livelihoods.
-    <p>According to the survey, some 70% of the farmers who grow cereals said Brexit had been negative for their businesses,
-        while 76% of oilseed rape growers felt that way. Similarly, 68% of farmers with beef cattle, dairy cows or sheep
-        had a negative perception. FarmersWeekly 23 Jun 2023</p>
-    <p>This project aims to explore Brexit's wide-ranging effects on agricultral using interactive spatial data analysis technologies to sense and predict the trends,
+    <p>Agriculture plays a significant economic role in the UK, supplying the agri-food sector and engaging in direct sales.
+        The impact of Brexit is sure to have vast implications on the role of agriculture in the UK, as the EU's Common Agricultural Policy
+        has shaped UK farming policies for decades since the 1970s.</p>
+    <p>This project aims to explore Brexit's wide-ranging effects on agricultral using interactive spatial data analysis technologies to sense trends,
         analyze the dynamic changes in social media topics and sentiments, understanding public opinion trends.</p>
 
+    <hr>
+    <p>2000-2022 UK Gross domestic product at 2024 dollar prices<sup><a href="#note1">1</a></sup> and the percentages of 2012-2022 agriculture’s contribution to the UK economy (Gross Value Added at basic prices)<sup><a href="#note1">2</a></sup></p>
     <div id="container3" class="agri-style">{% include 'agri_gdp.html' %}</div>
-
+    <p>The chart reveals that the percentages of UK's agricultural contribution to the total GDP fluctuates between 0.55% and 0.8%, with the highest value 0.76% in 2022
+        and the next highest in 2014 0.75%. Between 2014 and 2018, despite minor fluctuations, the overall trend was a decline, followed by a rebound and continuous
+        growth from 2018 to 2022. This seems to suggest that Brexit had a minimal or even positive impact on the development of UK agriculture, despite 2020 witnessing
+        the lowest total GDP in recent years.
+    </p>
+    <hr>
+    <p>Total income from farming in the United Kingdom (UK) from 2000 to 2022 in million GBP at 2022 prices<sup><a href="#note1">3</a></sup>, adjusted for inflation</p>
     <div id="container4" class="tiff-style">{% include '2000_2020TIFF.html' %}</div>
 
-    <p>From a macro level and according to the graph, TIFF(Total income from farming)<sup><a href="#note1">1</a></sup>
-        experienced a slight decrease in the Brexit year of 2020, then it started to consistently grow in 2021 and 2022.
-        For a deeper analysis, consider moving to next page 'Data Visualization'</p>
-    <hr></hr>
+    <p>Focused on adjusted data, income generally rose between 2000 and 2022 despite some data oscillating. In 2022, income peaked at 7.94 billion British pounds.
+        After experiencing declines in the previous two years, 2016's TIFF surged with a significant growth rate of 55.11% and in next 3 years, TIFF generally decreased, though there was a minor increase in 2019.
+        Comparatively, the decrease in 2020, Brexit year, was 5.19% from 2019, followed by continuous growth in the subsequent two years, with increase rate 29.13% and 11.03% respectively.
+    <p>For deeper analysis, consider moving to next page 'Data Visualization'</p>
+    <hr>
     <p><strong>Data from:</strong></p>
-    <p id="note1"><sup>1</sup> Defra; GOV.UK
+    <p id="note1"><sup>1</sup> https://www.imf.org/external/datamapper/NGDPD@WEO/GBR?year=2024
+    <p id="note1"><sup>2</sup> worldbank.org
+    <p id="note1"><sup>3</sup> Defra; GOV.UK
     </p>
 
 </body>

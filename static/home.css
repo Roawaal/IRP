@@ -27,3 +27,14 @@ p {
         height:75%;
         width:90%;
 }
+
+hr {
+    display: block;
+    width: 75%;
+    margin: auto;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid darkseagreen;
+
+    padding: 0;
+}
