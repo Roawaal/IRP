@@ -14,15 +14,18 @@
     </p>
     <div id="container1" class="event-style">{% include 'event.html' %}</div>
     <p>Although Scotland, Wales, Northern Ireland are important contributors to Uk agricultural output in monetary terms,
-        their datasets are not as comprehensive as English datasets. So we'll focus on 2017-2022 England and separate it by regions<sup><a href="#note1">1</a></sup> </p>
+        their datasets are not as comprehensive or updated as English datasets. So we'll focus on 2017-2022 England. </p>
     <p>Other constituent countries' datasets can be found by below links</p>
     <h5><a href="https://www.gov.scot/collections/total-income-from-farming/">Collection of total income from farming (TIFF) estimates for Scotland publications</a></h5>
     <h5><a href="https://www.gov.wales/farm-incomes">Farm incomes in wales including forecasts</a></h5>
     <h5><a href="https://www.daera-ni.gov.uk/articles/ni-agricultural-incomes">TIFF in Northern Ireland</a></h5>
 
     <hr>
+    <p></p>
+    <h3 class="h3-style">2017-2022 English TIFF separated by regions in million GBP at 2022 prices<sup><a href="#note1">1</a></sup></h3>
     <div id="container0" class="englishregions-style">{% include 'englishregions2017_2022.html' %}</div>
-    <p>...</p>
+
+    <h3>English Map</h3>
     <div class="parallel">
         <div id="container2" class="style-2022">{% include '2017_2022TIFF.html' %}</div>
         <div class="analyze">
@@ -30,16 +33,23 @@
             <p>...</p>
         </div>
     </div>
-
-    <h1 class="h1-style">UK imports and exports to the EU/world</h1>
+    <p></p>
     <hr>
-    <h1 class="h1-style">Pre-Brexit forecasts and post-Brexit data revisions</h1>
+    <h3 class="h3-style">United Kingdom's value of trade in food, feed and drink in million GDP at 2022 prices<sup><a href="#note1">2</a></sup></h3>
+    <p>prices adjusted by ONS implied deflators for trade MRET</p>
+    <div id="container5" class="im-export-style">{% include '2000_2022im_export.html' %}</div>
+    <p>From 2022 onwards, all trade data will be compiled from Customs declarations following the UK’s withdrawal from the European Union.</p>
+    <div id="container6" class="race-style">{% include '2016_2022_race.html' %}</div>
     <hr>
-    <h1 class="h1-style">Distribution of farming types in the UK (environment......)</h1>
+    <h3 class="h3-style">Pre-Brexit forecasts and post-Brexit data revisions</h3>
+    <hr>
+    <h3 class="h3-style">Distribution of farming types in the UK (environment......)</h3>
 
     <hr></hr>
     <p><strong>Data from:</strong></p>
-    <br id="note1"><sup>1</sup><p>https://www.gov.uk/government/statistics/agricultural-facts-england-regional-profiles
-    The data of London is included in the South East region</p>
+    <p id="note1"><sup>1</sup> https://www.gov.uk/government/statistics/agricultural-facts-england-regional-profiles
+    <br />The data of London is included in the South East region
+    </p>
+    <p id="note1"><sup>2</sup>https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom-2022/chapter-13-overseas-trade</p>
 </body>
 </html>

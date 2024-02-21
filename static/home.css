@@ -8,6 +8,16 @@ p {
   margin: 20px auto;
 }
 
+.h3-style {
+  text-align: left;
+  width: 60%;
+  word-wrap: break-word;
+  color: #333;
+  font-family: Arial, sans-serif;
+  padding: 1px;
+  margin: 20px auto;
+}
+
 .tiff-style {
         display: block;
         margin-left: auto;

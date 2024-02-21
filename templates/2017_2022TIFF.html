@@ -1,10 +1,10 @@
 CTYPE html>
-<html lang="en" style="height: 100%">
+<html lang="en" style="height: 50%">
 <head>
   <meta charset="utf-8">
 </head>
-<body style="height: 100%; margin: 0">
-  <div id="container2" style="height: 100%"></div>
+<body style="height: 50%; width: 50%;  margin: 0">
+  <div id="container2" style="height: 50%"></div>
 
   <script src="https://unpkg.com/topojson@3"></script>
   <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.7.1/jquery.min.js"></script>
@@ -90,8 +90,21 @@ CTYPE html>
       var baseOption = {
         timeline: {
           axisType: 'category',
+          rewind: true,  // Allow rewind on end
+          loop: false,  // Disable loop
+          playInterval: 3000,  // Set play interval (ms)
           autoPlay: false,
-          data: ['2017', '2018', '2019', '2020', '2021', '2022']
+          data: ['2017', '2018', '2019', '2020', '2021', '2022'],
+          label: {
+            formatter : function(s) {
+              return s;
+            }
+          },
+          controlStyle: {
+            showPlayBtn: false,  // Hide play button
+            showNextBtn: true,
+            showPrevBtn: true
+          }
         },
         title: {
           text: '2022 English farm statistics: Total Income from Farming (TIFF)',
