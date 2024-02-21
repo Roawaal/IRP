@@ -14,11 +14,11 @@ Pre-Brexit forecasts and post-Brexit data revisions
 
 Distribution of farming types in the UK (environment......)
 ## Regulations
-Pros
-
-Cons
+Pros/Cons for a certain group
 
 ## Public Opinion
-Need to scrapy the data of Google,facebook,youtube...
+Better not to scrapy the data of Google,facebook,youtube...
+
+Use Google trends/conducted survey instead
 
 ## Contact Me
