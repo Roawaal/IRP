@@ -24,22 +24,23 @@
     <p></p>
     <h3 class="h3-style">2017-2022 English TIFF separated by regions in million GBP at 2022 prices<sup><a href="#note1">1</a></sup></h3>
     <div id="container0" class="englishregions-style">{% include 'englishregions2017_2022.html' %}</div>
-
-    <h3>English Map</h3>
-
+    <hr>
+    <h3 class="h3-style">English Map</h3>
     <p></p>
     <hr>
     <h3 class="h3-style">United Kingdom's value of trade in food, feed and drink in million GDP at 2022 prices<sup><a href="#note1">2</a></sup></h3>
     <p>prices adjusted by ONS implied deflators for trade MRET</p>
     <div id="container5" class="im-export-style">{% include '2000_2022im_export.html' %}</div>
     <p>From 2022 onwards, all trade data will be compiled from Customs declarations following the UK’s withdrawal from the European Union.</p>
-    <div id="container6" class="race-style">{% include '2016_2022_race.html' %}</div>
+    <div class="parallel">
+        <div id="chart0" class="race-exports-style">{% include 'exports12.html' %}</div>
+        <div id="chart1" class="race-imports-style">{% include 'imports12.html' %}</div>
+    </div>
     <hr>
     <h3 class="h3-style">Pre-Brexit forecasts and post-Brexit data revisions</h3>
     <hr>
     <h3 class="h3-style">Distribution of farming types in the UK (environment......)</h3>
-
-    <hr></hr>
+    <hr>
     <p><strong>Data from:</strong></p>
     <p id="note1"><sup>1</sup> https://www.gov.uk/government/statistics/agricultural-facts-england-regional-profiles
     <br />The data of London is included in the South East region
