@@ -1,4 +1,4 @@
-CTYPE html>
+<!DOCTYPE html>
 <html lang="en" style="height: 50%">
 <head>
   <meta charset="utf-8">
@@ -11,7 +11,7 @@ CTYPE html>
   <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js"></script>
 
   <script type="text/javascript">
-    var data2017 = [
+    var data2017_2 = [
     { name: 'East Midlands', value: 614 },
     { name: 'Eastern', value: 643 },
     { name: 'North East', value: 176 },
@@ -22,7 +22,7 @@ CTYPE html>
     { name: 'Yorkshire and The Humber', value: 412 },
     ];
 
-    var data2018 = [
+    var data2018_2 = [
     { name: 'East Midlands', value: 580 },
     { name: 'Eastern', value: 602 },
     { name: 'North East', value: 147 },
@@ -33,7 +33,7 @@ CTYPE html>
     { name: 'Yorkshire and The Humber', value: 335 },
     ];
 
-    var data2019 = [
+    var data2019_2 = [
     { name: 'East Midlands', value: 620 },
     { name: 'Eastern', value: 739 },
     { name: 'North East', value: 216 },
@@ -44,7 +44,7 @@ CTYPE html>
     { name: 'Yorkshire and The Humber', value: 415 },
     ];
 
-    var data2020 = [
+    var data2020_2 = [
     { name: 'East Midlands', value: 591 },
     { name: 'Eastern', value: 670 },
     { name: 'North East', value: 147 },
@@ -55,7 +55,7 @@ CTYPE html>
     { name: 'Yorkshire and The Humber', value: 370 },
     ];
 
-    var data2021 = [
+    var data2021_2 = [
     { name: 'East Midlands', value: 882 },
     { name: 'Eastern', value: 1017 },
     { name: 'North East', value: 217 },
@@ -66,7 +66,7 @@ CTYPE html>
     { name: 'Yorkshire and The Humber', value: 568 },
     ];
 
-    var data2022 = [
+    var data2022_2 = [
     { name: 'East Midlands', value: 939 },
     { name: 'Eastern', value: 1094 },
     { name: 'North East', value: 258 },
@@ -87,7 +87,7 @@ CTYPE html>
       myChart2.hideLoading();
       echarts.registerMap('UK', topojson.feature(ukJson, ukJson.objects.eer));
 
-      var baseOption = {
+      var baseOption2 = {
         timeline: {
           axisType: 'category',
           rewind: true,  // Allow rewind on end
@@ -147,7 +147,7 @@ CTYPE html>
         ]
       };
 
-      var options = [
+      var options2 = [
         { series: [{
             name: 'Total Income from Farming (TIFF)',
             type: 'map',
@@ -158,7 +158,7 @@ CTYPE html>
                 show: true
               }
             },
-            data: data2017 }], title: { text: '2017 English TIFF' } },
+            data: data2017_2 }], title: { text: '2017 English TIFF' } },
 
         { series: [{
             name: 'Total Income from Farming (TIFF)',
@@ -170,7 +170,7 @@ CTYPE html>
                 show: true
               }
             },
-            data: data2018 } ], title: { text: '2018 English TIFF' } },
+            data: data2018_2 } ], title: { text: '2018 English TIFF' } },
 
         { series: [{
             name: 'Total Income from Farming (TIFF)',
@@ -182,7 +182,7 @@ CTYPE html>
                 show: true
               }
             },
-            data: data2019 } ], title: { text: '2019 English TIFF' } },
+            data: data2019_2 } ], title: { text: '2019 English TIFF' } },
 
         { series: [{
             name: 'Total Income from Farming (TIFF)',
@@ -194,7 +194,7 @@ CTYPE html>
                 show: true
               }
             },
-            data: data2020 } ], title: { text: '2020 English TIFF' } },
+            data: data2020_2 } ], title: { text: '2020 English TIFF' } },
 
         { series: [{
             name: 'Total Income from Farming (TIFF)',
@@ -206,7 +206,7 @@ CTYPE html>
                 show: true
               }
             },
-            data: data2021 } ], title: { text: '2021 English TIFF' } },
+            data: data2021_2 } ], title: { text: '2021 English TIFF' } },
 
         { series: [{
             name: 'Total Income from Farming (TIFF)',
@@ -218,13 +218,13 @@ CTYPE html>
                 show: true
               }
             },
-            data: data2022 } ], title: { text: '2022 English TIFF' } },
+            data: data2022_2 } ], title: { text: '2022 English TIFF' } },
 
       ];
 
       myChart2.setOption({
-        baseOption: baseOption,
-        options: options
+        baseOption2: baseOption2,
+        options2: options2
       });
     });
 

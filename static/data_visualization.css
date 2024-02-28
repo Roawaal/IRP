@@ -71,8 +71,15 @@ h5 {
   width:640px;
 }
 
-
-
+.style-2022{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 5px;
+  height:640px;
+  width:640px;
+}
 .parallel {
   display: flex;
   justify-content: space-between;

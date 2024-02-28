@@ -12,8 +12,8 @@
 
     <script>
         // JavaScript 代码
-        const updateFrequency = 2000;
-        const countryColors = {
+        const updateFrequencyChart1 = 2000;
+        const countryColorsChart1 = {
     Ireland: '#0D3328',
     France: '#C0D72F',
     China: '#FFCD00',
@@ -39,7 +39,7 @@
         const myChart7 = echarts.init(document.getElementById('chart1'));
 
         // 示例数据
-        const yearsData = {
+        const yearsDataChart1 = {
             2015: [
 ["France", 4286049.59],
 ["Netherlands", 3751879.46],
@@ -140,22 +140,10 @@
 ["Argentina", 763552.34],
 ["Denmark", 626860.67],
             ],
-            2022: [
-                ['Netherlands', 7342000],
-                ['France', 5835000],
-                ['Ireland', 4547000],
-                ['Belgium', 4253000],
-                ['Spain', 3873000],
-                ['Germany', 3858000],
-                ['Italy', 3751000],
-                ['Poland', 2851000],
-                ['United States', 1330000],
-                ['Brazil', 1298000]
 
-            ]
         };
 
-         const option7 = {
+        const optionChart1 = {
             xAxis: {
                 type: 'value'
             },
@@ -187,18 +175,18 @@
                 }
             ],
             animationDuration: 0,
-            animationDurationUpdate: updateFrequency,
+            animationDurationUpdate: updateFrequencyChart1,
             animationEasing: 'linear',
             animationEasingUpdate: 'linear'
         };
 
         // 使用刚指定的配置项和数据显示图表。
-        myChart7.setOption(option7);
+        myChart7.setOption(optionChart1);
 
         // 添加年份标签
-        const yearLabels = [];
-        for (let year in yearsData) {
-            yearLabels.push({
+        const yearLabelsChart1 = [];
+        for (let year in yearsDataChart1) {
+            yearLabelsChart1.push({
                 type: 'text',
                 right: 10,
                 top: 20 + (year - 2015) * 30,
@@ -211,36 +199,36 @@
 
         myChart7.setOption({
             graphic: {
-                elements: yearLabels
+                elements: yearLabelsChart1
             }
         });
 
         // 更新数据示例
-        let currentYearIndex = 0;
+        let currentYearIndexChart1 = 0;
         setInterval(function () {
-            const currentYear = 2015 + currentYearIndex;
-            const currentYearData = yearsData[currentYear];
+            const currentYearChart1 = 2015 + currentYearIndexChart1;
+            const currentYearDataChart1 = yearsDataChart1[currentYearChart1];
             myChart7.setOption({
                 yAxis: {
-                    data: currentYearData.map(item => item[0])
+                    data: currentYearDataChart1.map(item => item[0])
                 },
                 series: [
                     {
-                        data: currentYearData.map(item => ({
+                        data: currentYearDataChart1.map(item => ({
                             value: item[1],
                             itemStyle: {
-                                color: countryColors[item[0]] || '#5470c6'
+                                color: countryColorsChart1[item[0]] || '#5470c6'
                             }
                         }))
                     }
                 ]
             });
 
-            currentYearIndex++;
-            if (currentYearIndex >= Object.keys(yearsData).length) {
-                currentYearIndex = 0; // 循环播放年份数据
+            currentYearIndexChart1++;
+            if (currentYearIndexChart1 >= Object.keys(yearsDataChart1).length) {
+                currentYearIndexChart1 = 0; // 循环播放年份数据
             }
-        }, updateFrequency);
+        }, updateFrequencyChart1);
     </script>
 </body>
 </html>

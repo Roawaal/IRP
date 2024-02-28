@@ -4,23 +4,23 @@
   <meta charset="utf-8">
 </head>
 <body style="height: 100%; margin: 0">
-  <div id="container" style="height: 100%"></div>
+  <div id="container0_modified" style="height: 100%"></div>
 
-  
+
   <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js"></script>
 
   <script type="text/javascript">
-    var dom0 = document.getElementById('container0');
-    var myChart0 = echarts.init(dom0, null, {
+    var dom0_modified = document.getElementById('container0_modified');
+    var myChart0_modified = echarts.init(dom0_modified, null, {
       renderer: 'canvas',
       useDirtyRect: false
     });
-    var app = {};
-    
-    var option0;
+    var app_modified = {};
+
+    var option0_modified;
 
     setTimeout(function () {
-  option0 = {
+  option0_modified = {
     legend: {},
     tooltip: {
       trigger: 'axis',
@@ -111,11 +111,11 @@
       }
     ]
   };
-  myChart0.on('updateAxisPointer', function (event) {
+  myChart0_modified.on('updateAxisPointer', function (event) {
     const xAxisInfo = event.axesInfo[0];
     if (xAxisInfo) {
       const dimension = xAxisInfo.value + 1;
-      myChart0.setOption({
+      myChart0_modified.setOption({
         series: {
           id: 'pie',
           label: {
@@ -129,14 +129,14 @@
       });
     }
   });
-  myChart0.setOption(option0);
+  myChart0_modified.setOption(option0_modified);
 });
 
-    if (option0 && typeof option0 === 'object') {
-      myChart0.setOption(option0);
+    if (option0_modified && typeof option0_modified === 'object') {
+      myChart0_modified.setOption(option0_modified);
     }
 
-    window.addEventListener('resize', myChart0.resize);
+    window.addEventListener('resize', myChart0_modified.resize);
   </script>
 </body>
 </html>

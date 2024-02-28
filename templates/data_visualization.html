@@ -23,19 +23,23 @@
     <hr>
     <p></p>
     <h3 class="h3-style">2017-2022 English TIFF separated by regions in million GBP at 2022 prices<sup><a href="#note1">1</a></sup></h3>
-    <div id="container0" class="englishregions-style">{% include 'englishregions2017_2022.html' %}</div>
+    <div id="container0_modified" class="englishregions-style">{% include 'englishregions2017_2022.html'%}</div>
     <hr>
     <h3 class="h3-style">English Map</h3>
     <p></p>
     <hr>
-    <h3 class="h3-style">United Kingdom's value of trade in food, feed and drink in million GDP at 2022 prices<sup><a href="#note1">2</a></sup></h3>
+    <h3 class="h3-style">United Kingdom's value of trade in food, feed and drink in million GDP at 2022 prices<sup><a href="#note2">2</a></sup></h3>
     <p>prices adjusted by ONS implied deflators for trade MRET</p>
     <div id="container5" class="im-export-style">{% include '2000_2022im_export.html' %}</div>
     <p>From 2022 onwards, all trade data will be compiled from Customs declarations following the UK’s withdrawal from the European Union.</p>
+    <hr>
+    <h3 class="h3-style">United Kingdom Food Products Exports, Imports, Tariffs by country and region 2015-2021 at each year's prices (US$ Thousand)<sup><a href="#note3">3</a></sup></h3>
+    <p>因为worldbank网站目前只更新到2021年的数据，其他网站虽然有更新的数据但由于统计方法货币计量不同所以不考虑采纳，并且我们侧重于food trade</p>
     <div class="parallel">
         <div id="chart0" class="race-exports-style">{% include 'exports12.html' %}</div>
         <div id="chart1" class="race-imports-style">{% include 'imports12.html' %}</div>
     </div>
+    <iframe height="337px" width="100%" src="https://www.ons.gov.uk/visualisations/dvc2474/fig5/index.html"></iframe>
     <hr>
     <h3 class="h3-style">Pre-Brexit forecasts and post-Brexit data revisions</h3>
     <hr>
@@ -45,6 +49,9 @@
     <p id="note1"><sup>1</sup> https://www.gov.uk/government/statistics/agricultural-facts-england-regional-profiles
     <br />The data of London is included in the South East region
     </p>
-    <p id="note1"><sup>2</sup>https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom-2022/chapter-13-overseas-trade</p>
+    <p id="note2"><sup>2</sup>https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom-2022/chapter-13-overseas-trade</p>
+    <p id="note3"><sup>3</sup>worldbank.org
+    <br />For example, United Kingdom Food Products Exports, Imports, Tariffs by country and region 2021: https://wits.worldbank.org/CountryProfile/en/Country/GBR/Year/2021/TradeFlow/EXPIMP/Partner/all/Product/16-24_FoodProd
+    </p>
 </body>
 </html>
