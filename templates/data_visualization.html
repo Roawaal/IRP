@@ -44,17 +44,34 @@
     </div>
      <hr>
     <div id="id-2">
+        <p>Since the UK left the EU, the arrangements for how the UK trades with the EU have changed.
+            The following section will apply data to display the impact of Brexit on UK's overseas trade in agricultural stuff, excluding other goods like material manufactures or fuels.</p>
+        <p>Moreover, it will pay more attention to annual changes rather than quarterly's, as the seasonal fluctuations in UK agricultural are significant. For example, during the summer months,
+            the UK can grow plenty of its own produce like lettuces and soft berries such as raspberries and strawberries, but when the weather turns colder Britain is forced to rely much more on imports from the EU.</p>
         <h3 class="h3-style">United Kingdom's value of trade in food, feed and drink in million GDP at 2022 prices<sup><a href="#note3">3</a></sup></h3>
-        <p>prices adjusted by ONS implied deflators for trade MRET</p>
+        <p>Prices adjusted by ONS(Office for National Statistics) implied deflators for trade MRET(UK trade time series: Monthly value of UK exports and imports of goods and services by current price, chained volume measures and implied deflators)</p>
         <div id="container5" class="im-export-style">{% include '2000_2022im_export.html' %}</div>
         <p>From 2022 onwards, all trade data will be compiled from Customs declarations following the UK’s withdrawal from the European Union.</p>
         <hr>
-        <h3 class="h3-style">United Kingdom Food Products Exports, Imports, Tariffs by country and region 2015-2021 at each year's prices (US$ Thousand)<sup><a href="#note4">4</a></sup></h3>
-        <p>因为worldbank网站目前只更新到2021年的数据，其他网站虽然有更新的数据但由于统计方法货币计量不同所以不考虑采纳，并且我们侧重于food trade</p>
-        <div class="parallel">
+        <h3 class="h3-style">United Kingdom Food Products Top12 Exports, Imports, Tariffs by country 2015-2021 at each year's prices (US$ Thousand)<sup><a href="#note4">4</a></sup></h3>
+        <p>The worldbank.org currently updates the data focused on UK's overseas food trade up to the year 2021, although other sources have latest data,
+            we do not consider applying them due to differences in statistical methods and currency measurement.</p>
+        <div class="parallel0">
             <div id="chart0" class="race-exports-style">{% include 'exports12.html' %}</div>
             <div id="chart1" class="race-imports-style">{% include 'imports12.html' %}</div>
         </div>
+        <p></p>
+        <h3 class="h3-style">United Kingdom Food Products Top12 Exports, Imports, Tariffs by region 2015-2021 at each year's prices (US$ Thousand)<sup><a href="#note4">4</a></sup></h3>
+        <div class="parallel1">
+            <div id="container8" class="line-exports-style">{% include 'exports_regions.html' %}</div>
+            <div id="container9" class="line-imports-style">{% include 'imports_regions.html' %}</div>
+        </div>
+        <p>From the dynamic chart above, it's evident that the EU is a crucial destination for the UK's food imports and exports.
+           Meanwhile, it's been said that "Europe is the UK’s leading foreign supplier of food, accounting for more than a quarter of food consumed in Britain by value."
+            <br /><br />New border measures after Brexit impact the flow of critical food ingredients from the EU to the UK.
+        </p>
+        <p>做一个border control政策时间线/关税UK Tariff</p>
+        <p>https://www.gov.uk/guidance/import-or-move-food-and-drink-from-the-eu-and-northern-ireland-to-great-britain</p>
         <iframe height="337px" width="100%" src="https://www.ons.gov.uk/visualisations/dvc2474/fig5/index.html"></iframe>
 
     </div>

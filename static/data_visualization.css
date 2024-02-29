@@ -119,7 +119,7 @@ h5 {
   height:640px;
   width:640px;
 }
-.parallel {
+.parallel0 {
   display: flex;
   justify-content: space-between;
 }
@@ -135,4 +135,34 @@ h5 {
 
 .race-imports-style {
   margin-left: 20px;
+  margin-right: 20px;
+}
+
+.race-exports-style {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.parallel1{
+  display: flex;
+  justify-content: space-between;
+}
+
+.line-exports-style, .line-imports-style {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #bddabd;
+  height: 480px;
+  max-width: calc(50% - 20px);
+}
+
+.line-imports-style {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.line-exports-style {
+  margin-left: 20px;
+  margin-right: 20px;
 }
