@@ -28,10 +28,6 @@ def contact():
     dynamic_content = "This is dynamic content"
     return render_template('contact.html', content=dynamic_content)
 
-@app.route('/map')
-def show_map():
-    return render_template('static/uk_regions_map.html')
-
 
 
 if __name__ == '__main__':

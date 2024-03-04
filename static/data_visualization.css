@@ -106,8 +106,8 @@ h5 {
   margin-right: auto;
   padding: 20px;
   border-radius: 5px;
-  height:640px;
-  width:640px;
+  height:480px;
+  width:720px;
 }
 
 .style-2022{
@@ -143,26 +143,43 @@ h5 {
   margin-right: 20px;
 }
 
-.parallel1{
-  display: flex;
-  justify-content: space-between;
-}
+
 
 .line-exports-style, .line-imports-style {
-  flex: 1;
+
   padding: 20px;
   border-radius: 5px;
-  background-color: #bddabd;
-  height: 480px;
-  max-width: calc(50% - 20px);
+
+  height: 360px;
+
 }
 
 .line-imports-style {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 240px;
+  margin-right: 240px;
 }
 
 .line-exports-style {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 240px;
+  margin-right: 240px;
+}
+
+.eu-style {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 5px;
+  height:240px;
+  width:720px;
+}
+
+th {
+  text-align: left;
+}
+tr:hover {background-color: #c1eabc;}
+.annual-rate {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 }
