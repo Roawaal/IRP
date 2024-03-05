@@ -130,16 +130,16 @@ h5 {
   border-radius: 5px;
   background-color: #bddabd;
   height: 480px;
-  max-width: calc(50% - 20px);
+  max-width: calc(50% - 10px);
 }
 
 .race-imports-style {
   margin-left: 20px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .race-exports-style {
-  margin-left: 20px;
+  margin-left: 10px;
   margin-right: 20px;
 }
 
