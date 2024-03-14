@@ -2,15 +2,12 @@
 a:link {
   color: darkgreen;
 }
-
-a:visited {
-  color: darkcyan;
-}
-
 a:hover {
   color: forestgreen;
 }
-
+a:visited {
+  color: darkgreen;
+}
 
 p {
   text-align: left;

@@ -1,0 +1,45 @@
+p {
+  text-align: left;
+  width: 60%;
+  word-wrap: break-word;
+  color: #333;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  margin: 20px auto;
+}
+.underline {
+  text-decoration: #7dde7d underline;
+  font-style: italic;
+}
+
+h3 {
+  text-align: left;
+  width: 60%;
+  word-wrap: break-word;
+  color: #333;
+  font-family: Arial, sans-serif;
+  padding: 1px;
+  margin: 20px auto;
+}
+
+h2 {
+  text-align: left;
+  width: 60%;
+  word-wrap: break-word;
+  font-family:monospace;
+  font-size: 1.2rem;
+  padding: 1px;
+  margin: 10px auto;
+}
+
+a:link {
+  color: darkgreen;
+}
+a:visited {
+  color: darkgreen;
+}
+
+
+a:hover {
+  color: forestgreen;
+}

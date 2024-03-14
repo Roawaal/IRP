@@ -1,5 +1,5 @@
 from flask_cors import *
-from flask import Flask,render_template
+from flask import Flask,render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -29,6 +29,18 @@ def contact():
     return render_template('contact.html', content=dynamic_content)
 
 
+@app.route('/chart')
+def chart():
+    return render_template('2010_2022cap.html')
+
+
+@app.route('/your/flask/endpoint', methods=['POST'])
+def process_names():
+    data = request.get_json()
+    names = data.get('names')
+    # Process names as needed
+    print("Received names:", names)
+    return jsonify({'message': 'Names received successfully'})
 
 if __name__ == '__main__':
     app.run(debug=True)

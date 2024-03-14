@@ -2,10 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='regulations.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>regulations</title>
 </head>
 <body>
     <div>{% include 'header.html' %}</div>
+    <p>CAP (EU's Common Agricultural Policy) is a system of agricultural subsidies and programmes covering farming, environmental measures and rural development.
+        Having left the EU, the UK is now free to design its own agricultural policy to replace the CAP, although key elements of the CAP-based system currently remain in place.</p>
+    <p>Before Brexit, the government promised to match EU funding. <p class="underline">However, the critical question remains: Were these promises fulfilled?<p></p>
+    <div>
+            <h2 class="h2"><a href="#id-1">Common Agricultural Policy</a></h2>
+            <br />
+            <h2 class="h2"><a href="#id-2">New Regulations Designed to Replace CAP/Agriculture subsidies after Brexit</a></h2>
+            <br />
+            <h2 class="h2"><a href="#id-4">...</a></h2>
+            <br />
+    </div>
+    <div id="id-1">
+        <div id="container10" style="height: 480px; width: 800px">{% include '2010_2022ukcap.html' %}</div>
+        <div id="pivot-container">{% include '2010_2022cap.html' %}</div>
+    </div>
+    <div id="id-2">
+    </div>
+    <div id="id-3">
+    </div>
+    <p>Farming businesses: working after Brexit transition</p>
+    <p>The Chancellor has today confirmed nearly £3 billion of funding for 2020 to support farmers once the UK leaves the EU.</p>
     <h1>Regulations</h1>
     <h3>Farmers Weekly survey</h3>
     <h2>Farm Subsidies 2018-2022 </h2>
