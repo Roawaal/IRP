@@ -19,8 +19,14 @@
             <h2 class="h2"><a href="#id-4">...</a></h2>
             <br />
     </div>
+    <hr>
     <div id="id-1">
-        <div id="container10" style="height: 480px; width: 800px">{% include '2010_2022ukcap.html' %}</div>
+        <h3>2010-2022 All CAP payments in Euros million by funding stream for United Kingdom, shows payments after deduction for modulation where appropriate.<sup><a href="#note1">1</a></sup></h3>
+        <div class="parallel1">
+            <div id="container10" class="ukcap-style">{% include '2010_2022ukcap.html' %}</div>
+            <div class="text-style">.....</div>
+        </div>
+        <h3>2010-2022 All CAP payments in Euros million by funding stream for United Kingdom separated by regions</h3>
         <div id="pivot-container">{% include '2010_2022cap.html' %}</div>
     </div>
     <div id="id-2">
@@ -34,5 +40,8 @@
     <h2>Farm Subsidies 2018-2022 </h2>
     <h3>Covid-19/Russo-Ukrainian War/Inflation</h3>
     <p>Labour shortages cost millions in fruit and veg waste: Seasonal Worker visa (Temporary Work)</p>
+    <hr>
+    <p><strong>Data from:</strong></p>
+    <p id="note1"><sup>1</sup> https://assets.publishing.service.gov.uk/media/6215ff49e90e0710b9a8bdff/AUK2020_22feb22.pdf </p>
 </body>
 </html>

@@ -12,6 +12,19 @@ p {
   font-style: italic;
 }
 
+
+hr {
+    display: block;
+    width: 75%;
+    margin: auto;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid darkseagreen;
+
+    padding: 0;
+}
+
+
 h3 {
   text-align: left;
   width: 60%;
@@ -42,4 +55,30 @@ a:visited {
 
 a:hover {
   color: forestgreen;
+}
+
+.parallel1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ukcap-style {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #bddabd;
+  height: 360px;
+  max-width: calc(50% - 30px);
+    margin: 30px;
+    width: 480px;
+}
+
+.text-style {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #bddabd;
+  height: 360px;
+  max-width: calc(50% - 30px);
+     margin: 30px;
 }

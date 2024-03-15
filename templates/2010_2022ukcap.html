@@ -20,80 +20,102 @@
 
     var option10;
 
-const rawData = [
-  [100, 302, 301, 334, 390, 330, 320],
-  [320, 132, 101, 134, 90, 230, 210],
-  [220, 182, 191, 234, 290, 330, 310],
-  [150, 212, 201, 154, 190, 330, 410],
-  [820, 832, 901, 934, 1290, 1330, 1320]
-];
-const totalData = [];
-for (let i = 0; i < rawData[0].length; ++i) {
-  let sum = 0;
-  for (let j = 0; j < rawData.length; ++j) {
-    sum += rawData[j][i];
-  }
-  totalData.push(sum);
-}
-const grid = {
-  left: 100,
-  right: 100,
-  top: 50,
-  bottom: 50
-};
-const series = [
-  'Direct',
-  'Mail Ad',
-  'Affiliate Ad',
-  'Video Ad',
-  'Search Engine'
-].map((name, sid) => {
-  return {
-    name,
-    type: 'bar',
-    stack: 'total',
-    barWidth: '60%',
-    label: {
+    option10 = {
+toolbox: {
+  trigger: 'axis',
+  axisPointer: {
+    type: 'shadow'
+  },
+  feature: {
+    dataView: { show: true, readOnly: false },
+    magicType: {
       show: true,
-      formatter: (params) => Math.round(params.value * 1000) / 10 + '%'
-    },
-    data: rawData[sid].map((d, did) =>
-      totalData[did] <= 0 ? 0 : d / totalData[did]
-    )
-  };
-});
-option10 = {
-  legend: {
-    selectedMode: false
-  },
-      toolbox: {
-        feature: {
-          dataView: { show: true, readOnly: false },
-          magicType: {
-            show: true,
-            type: ['line', 'bar', 'stack'],
-            iconStyle: {
-              normal: {
-                color: '#007bff'
-              },
-              emphasis: {
-                color: '#0056b3'
-              }
-            }
-          },
-          restore: { show: true },
-          saveAsImage: { show: true }
+      type: ['line', 'bar'],
+      iconStyle: {
+        normal: {
+          color: '#007bff'
+        },
+        emphasis: {
+          color: '#0056b3'
         }
+      }
+    },
+    restore: { show: true },
+    saveAsImage: { show: true }
+  }
+},
+
+  legend: {},
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018','2019', '2020', '2021', '2022']
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  series: [
+    {
+      name: 'Direct Aids',
+      type: 'bar',
+      stack: 'Total Pillar1',
+      emphasis: {
+        focus: 'series'
       },
-  grid,
-  yAxis: {
-    type: 'value'
-  },
-  xAxis: {
-    type: 'category',
-    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  },
-  series
+      data: [3325	,3304	,3290,	3285,	3195,	3112,	3035,	3080	,3126	,3186	,3160,	0	,0]
+    },
+    {
+      name: 'Market Price Support',
+      type: 'bar',
+      stack: 'Total Pillar1',
+      emphasis: {
+        focus: 'series'
+      },
+      data: [99,	5	,58	,41	,39	,38,	86,	91	,48	,42,	41	,0	,0]
+    },
+    {
+      name: 'EAFRD',
+      type: 'bar',
+      stack: 'Total Pillar2',
+      emphasis: {
+        focus: 'series'
+      },
+      data: [512,	653	,742	,752,	798,	709	,641	,542	,581	,776	,766	,638	,475]
+    },
+    {
+      name: 'Co-financing',
+      type: 'bar',
+      stack: 'Total Pillar2',
+      emphasis: {
+        focus: 'series'
+      },
+      data: [401,	365	,343	,339	,267	,250	,165,	261	,179,	225	,227	,189,	171]
+    },
+    {
+      name: 'Total CAP Payments',
+      type: 'bar',
+      data: [4337,	4327	,4433	,4417,	4299	,4109	,3927	,3974,	3934,	4229,	4193	,827	,646],
+      emphasis: {
+        focus: 'series'
+      },
+      markLine: {
+        lineStyle: {
+          type: 'dashed'
+        },
+        data: [[{ type: 'min' }, { type: 'max' }]]
+      }
+    },
+
+  ]
 };
 
     if (option10 && typeof option10 === 'object') {
@@ -104,4 +126,3 @@ option10 = {
   </script>
 </body>
 </html>
-
