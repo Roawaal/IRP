@@ -20,42 +20,49 @@
 
     var option10;
 
-    option10 = {
-toolbox: {
-  trigger: 'axis',
-  axisPointer: {
-    type: 'shadow'
-  },
-  feature: {
-    dataView: { show: true, readOnly: false },
-    magicType: {
-      show: true,
-      type: ['line', 'bar'],
-      iconStyle: {
-        normal: {
-          color: '#007bff'
-        },
-        emphasis: {
-          color: '#0056b3'
-        }
-      }
+option10 = {
+  toolbox: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
     },
-    restore: { show: true },
-    saveAsImage: { show: true }
-  }
-},
-
+    feature: {
+      dataView: { show: true, readOnly: false },
+      magicType: {
+        show: true,
+        type: ['line', 'bar'],
+        iconStyle: {
+          normal: {
+            color: '#007bff'
+          },
+          emphasis: {
+            color: '#0056b3'
+          }
+        }
+      },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  dataZoom: [
+    {
+      type: 'slider', // 滑动条类型的 dataZoom 组件
+      start: 0,       // 数据窗口范围的起始百分比
+      end: 100,       // 数据窗口范围的结束百分比
+      bottom: 10      // 组件距离底部的距离
+    }
+  ],
   legend: {},
   grid: {
     left: '3%',
     right: '4%',
-    bottom: '3%',
+    bottom: '15%',  // 调整底部留给 dataZoom 的空间
     containLabel: true
   },
   xAxis: [
     {
       type: 'category',
-      data: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018','2019', '2020', '2021', '2022']
+      data: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022']
     }
   ],
   yAxis: [
