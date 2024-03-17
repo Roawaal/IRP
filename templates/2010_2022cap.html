@@ -8,12 +8,17 @@
   <script src="https://cdn.flexmonster.com/flexmonster.js"></script>
   <script src="https://cdn.flexmonster.com/lib/flexmonster.highcharts.js"></script>
   <script src="https://code.highcharts.com/4.2.2/highcharts.js"></script>
+  <style>
+    #pivot-container {
+      width: 75%;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
 
 <div>
   <div id="pivot-container"></div>
-
 </div>
 
 <script>
@@ -71,6 +76,7 @@
 reportcomplete: function() {
   pivot.off("reportcomplete");
 }
+
 
 
   });

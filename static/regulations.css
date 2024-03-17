@@ -45,8 +45,10 @@ h2 {
   margin: 10px auto;
 }
 
+
+
 a:link {
-  color: darkgreen;
+  color: #87e187;
 }
 a:visited {
   color: darkgreen;
@@ -81,4 +83,12 @@ a:hover {
   height: 360px;
   max-width: calc(50% - 30px);
      margin: 30px;
+    word-wrap: break-word;
+  font-family: Arial, sans-serif;
 }
+
+.pros-cons-style {
+    width: 60%;
+  margin: 0 auto;
+}
+
