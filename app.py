@@ -13,6 +13,7 @@ def data_visualization():
     dynamic_content = "This is dynamic content"
     return render_template('data_visualization.html', content=dynamic_content)
 
+
 @app.route('/regulations')
 def regulations():
     dynamic_content = "This is dynamic content"
