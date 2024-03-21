@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+#myInput {
+  width: 75%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 75%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* Style the close button */
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.topright:hover {color: #9ce3aa;}
+</style>
+</head>
+<body>
+
+<h3>CAP's pros and cons for UK taxpayers and farmers</h3>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Public')" id="defaultOpen">Political Parties</button>
+  <button class="tablinks" onclick="openCity(event, 'Taxpayers')" id="defaultOpen">Taxpayers/Consumers</button>
+  <button class="tablinks" onclick="openCity(event, 'Farmers')">Farmers</button>
+</div>
+
+<div id="Public" class="tabcontent">
+  <span class="topright" onclick="this.parentElement.style.display='none'">&times;</span>
+<table>
+  <tr>
+    <td>Cons</td>
+      <td>  &nbsp; 1. When we leave the EU and are freed from the Common Agricultural Policy, we will be able to support our vital rural communities – who are a cornerstone of life in the UK – with a fairer and less bureaucratic system.<br/>
+            &nbsp; 2. Outside the EU we will have a simpler, fairer funding system – one that rewards farmers for enhancing our environment and safeguarding our high animal welfare standards.
+      </td>
+  </tr>
+</table>
+
+</div>
+<div id="Taxpayers" class="tabcontent">
+  <span class="topright" onclick="this.parentElement.style.display='none'">&times;</span>
+<table>
+  <tr>
+    <td>Cons</td>
+      <td>  &nbsp; 1. The UK gets much less from the CAP than it contributes.<br/>
+            &nbsp; 2. We all pay more (the tax burden on a society, high food prices)
+      </td>
+  </tr>
+</table>
+
+</div>
+
+<div id="Farmers" class="tabcontent">
+  <span class="topright" onclick="this.parentElement.style.display='none'">&times;</span>
+<table>
+  <tr>
+    <td>Pros</td>
+      <td> &nbsp;  1. Welfare system for farmers (especially smallholders)<br/>
+           &nbsp;  2. ‘prices at the farm gate level’
+      </td>
+  </tr>
+</table>
+</div>
+
+
+<script>
+
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable"); // Corrected table ID
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>

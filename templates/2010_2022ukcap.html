@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container10" style="height: 100%"></div>
+
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+
+  <script type="text/javascript">
+    var dom10 = document.getElementById('container10');
+    var myChart10 = echarts.init(dom10, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+
+    var option10;
+
+    option10 = {
+      toolbox: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        },
+        feature: {
+          dataView: { show: true, readOnly: false },
+          magicType: {
+            show: true,
+            type: ['line', 'bar'],
+            iconStyle: {
+              normal: {
+                color: '#007bff'
+              },
+              emphasis: {
+                color: '#0056b3'
+              }
+            }
+          },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      dataZoom: [
+        {
+          type: 'slider',
+          start: 0,
+          end: 100,
+          bottom: 10
+        }
+      ],
+      legend: {},
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '15%',
+        containLabel: true
+      },
+      xAxis: [
+        {
+          type: 'category',
+          data: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022']
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value'
+        }
+      ],
+      series: [
+        {
+          name: 'Direct Aids',
+          type: 'bar',
+          stack: 'Total Pillar1',
+          emphasis: {
+            focus: 'series'
+          },
+          data: [3325, 3304, 3290, 3285, 3195, 3112, 3035, 3080, 3126, 3186, 3160, 0, 0]
+        },
+        {
+          name: 'Market Price Support',
+          type: 'bar',
+          stack: 'Total Pillar1',
+          emphasis: {
+            focus: 'series'
+          },
+          data: [99, 5, 58, 41, 39, 38, 86, 91, 48, 42, 41, 0, 0]
+        },
+        {
+          name: 'EAFRD',
+          type: 'bar',
+          stack: 'Total Pillar2',
+          emphasis: {
+            focus: 'series'
+          },
+          data: [512, 653, 742, 752, 798, 709, 641, 542, 581, 776, 766, 638, 475]
+        },
+        {
+          name: 'Co-financing',
+          type: 'bar',
+          stack: 'Total Pillar2',
+          emphasis: {
+            focus: 'series'
+          },
+          data: [401, 365, 343, 339, 267, 250, 165, 261, 179, 225, 227, 189, 171]
+        },
+        {
+          name: 'Total CAP Payments',
+          type: 'bar',
+          data: [4337, 4327, 4433, 4417, 4299, 4109, 3927, 3974, 3934, 4229, 4193, 827, 646],
+          emphasis: {
+            focus: 'series'
+          },
+          markLine: {
+            lineStyle: {
+              type: 'dashed'
+            },
+            data: [[{ type: 'min' }, { type: 'max' }]]
+          },
+          label: {
+            show: true,
+            position: 'top',
+            formatter: function (params) {
+              if (params.dataIndex === 11) {
+                return 'Still receive pillar2 payments post Brexit ' + params.name;
+              } else {
+                return '';
+              }
+            }
+          }
+        }
+      ]
+    };
+
+    if (option10 && typeof option10 === 'object') {
+      myChart10.setOption(option10);
+    }
+
+    window.addEventListener('resize', myChart10.resize);
+  </script>
+</body>
+</html>
