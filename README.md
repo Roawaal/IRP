@@ -15,11 +15,11 @@ Pre-Brexit forecasts and post-Brexit data revisions
 
 Distribution of farming types in the UK (environment......)
 ## Regulations
-Pros/Cons for a certain group
+Pros/Cons for farmers and political parties
 
 ## Public Opinion
-Better not to scrapy the data of Google,facebook,youtube...
+Brexit or no Brexit
 
-Use Google trends/conducted survey instead
+How well or badly do you think the government is handling the following issues?
 
 ## Contact Me
