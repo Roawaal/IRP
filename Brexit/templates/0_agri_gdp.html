@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container3" style="height: 100%"></div>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+  <script type="text/javascript">
+    var dom3 = document.getElementById('container3');
+    var myChart3 = echarts.init(dom3, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+
+    var option3;
+
+    option3 = {
+         graphic: {
+  type: 'text',
+  left: 'center', // Position in the middle along the x-axis
+  bottom: 10, // Position at the bottom with a small margin
+  style: {
+    text: 'Note: Data for 2000-2011 is partially missing.', // Your note
+    fill: '#333', // Text color
+    fontSize: 14,
+  }
+},
+
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      crossStyle: {
+        color: '#999'
+      }
+    }
+  },
+  toolbox: {
+    feature: {
+      dataView: { show: true, readOnly: false },
+      magicType: { show: true, type: ['line', 'bar'] },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  legend: {
+    data: ['UK GDP at 2024 $ prices', 'Agriculture’s contribution to GDP']
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018','2019', '2020', '2021', '2022'],
+      axisPointer: {
+        type: 'shadow'
+      }
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      name: 'UK GDP at 2024 $ prices',
+      min: 1500,
+      max: 3500,
+      interval: 500,
+      axisLabel: {
+        formatter: '{value} $bn'
+      }
+    },
+    {
+      type: 'value',
+      name: 'Agriculture’s contribution to GDP',
+      min: 0,
+      max: 1.5,
+      interval: 0.1,
+      axisLabel: {
+        formatter: '{value} %'
+      }
+    }
+  ],
+  series: [
+    {
+      name: 'UK GDP at 2024 $ prices',
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value + ' $bn';
+        }
+      },
+      data: [
+        1669.283, 1649.083,	1788.663,	2058.485	,2424.053	,2547.665,	2713.729,	3094.006,	2962.502	,2426.291	,2493.844	,2667.317,2706.822,	2788.128,	3066.819,	2935.506,	2709.678,
+          2685.637	,2881.845	,2858.728	,2706.542	,3123.231,	3081.871
+      ]
+    },
+    {
+      name: 'Agriculture’s contribution to GDP',
+      type: 'line',
+      yAxisIndex: 1,
+      tooltip: {
+        valueFormatter: function (value) {
+          return value + ' %';
+        }
+      },
+      data: [0,0,0,0,0,0,0,0,0,0,0,0,0.63,
+0.63,
+0.75,
+0.63,
+0.58,
+0.59,
+0.57,
+0.60,
+0.66,
+0.71,
+0.76]
+    }
+  ]
+};
+
+    if (option3 && typeof option3 === 'object') {
+      myChart3.setOption(option3);
+    }
+
+    window.addEventListener('resize', myChart3.resize);
+  </script>
+</body>
+</html>

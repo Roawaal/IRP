@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>events</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/timeline.js"></script>
+    <style>
+        #event {
+            min-width: 400px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #event2 {
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 620px;
+        }
+    </style>
+</head>
+<body>
+    <div id="event"></div>
+    <div id="event2"></div>
+
+    <script>
+        Highcharts.chart('event', {
+            chart: {
+                zoomType: 'x',
+                inverted: true
+            },
+            xAxis: {
+                type: 'datetime',
+                visible: true,
+                gridLineWidth: 1,
+            },
+            yAxis: {
+                gridLineWidth: 1,
+                title: null,
+                labels: {
+                    enabled: false
+                }
+            },
+            series: [{
+                type: 'timeline',
+                dataLabels: {
+                    allowOverlap: false,
+                    format: '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
+                        '{point.x:%d %b %Y}</span><br/>{point.label}'
+                },
+                marker: {
+                    symbol: 'circle'
+                },
+    data: [{
+      x: Date.UTC(2020, 1, 16),
+      name: 'COVID-19 pandemic in UK',
+      label: 'COVID-19 pandemic in UK',
+      description: "COVID-19 was confirmed to be present in the UK by the end of January 2020 with the first confirmed deaths in March"
+    }, {
+      x: Date.UTC(2020, 1, 31),
+      name: 'Brexit',
+      label: 'Brexit',
+      description: "Following a referendum on 23 June 2016, Brexit officially took place at 23:00 GMT on 31 January 2020 (00:00 1 February 2020 CET). The UK is the only sovereign country to have left the EU. "
+    }, {
+      x: Date.UTC(2022, 2, 24),
+      name: 'Russo-Ukrainian War',
+      label: 'Russo-Ukrainian War',
+      description: "Russia invaded Ukraine in an escalation of the Russo-Ukrainian War that started in 2014"
+    }, {
+      x: Date.UTC(2022, 7, 19),
+      name: 'Highest UK temperature 40.3C',
+      label: 'Highest UK temperature 40.3C',
+      description: "Highest UK temperature 40.3C in Coningsby, Lincolnshire & Doncaster, South Yorkshire"
+    }, {
+      x: Date.UTC(2022, 10),
+      name: 'The annual rate of inflation reached 11.1%',
+      label: 'The annual rate of inflation reached 11.1%',
+      description: "The cost of living increased sharply across the UK during 2021 and 2022. The annual rate of inflation reached 11.1% in October 2022, a 41-year high, before easing in subsequent months."
+    }]
+            }]
+        });
+
+        Highcharts.chart('event2', {
+            series: [{
+                data: [12, 4, 19, 4, 23]
+            }]
+        });
+    </script>
+</body>
+</html>
