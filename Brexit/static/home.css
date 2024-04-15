@@ -1,3 +1,4 @@
+
 p {
   text-align: left;
   width: 60%;
@@ -96,11 +97,63 @@ a:visited {
   width:1000px;
 }
 .six-style {
-      display: block;
+       display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
   border-radius: 5px;
-  height:480px;
-  width:1000px;
+}
+
+.flex-container {
+
+      margin: 20px auto;
+  width: 60%;
+    display: flex;
+    justify-content: space-between; /* Aligns the child elements on opposite ends */
+    align-items: center; /* Vertically centers the children in the container */
+    padding: 5px; /* Add padding as necessary */
+}
+
+.six_button {
+    font-size: 16px;
+    color: #ffffff; /* white text */
+    background-color: #4eb66d; /* green background */
+    border: none;
+    border-radius: 25px; /* fully rounded ends */
+    cursor: pointer;
+    transition: all 0.3s ease; /* smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px; /* Add padding to size the button */
+    width: 20%;
+}
+
+.text {
+  width: 60%;
+  word-wrap: break-word;
+  color: #333;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+
+    flex-grow: 1; /* Allows the paragraph to fill the space */
+}
+
+th {
+  text-align: left;
+}
+tr:hover {background-color: #c1eabc;}
+.annual-rate {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+    height: 5%;
+}
+
+.seven-style {
+  padding: 20px;
+  border-radius: 5px;
+  height: 480px;
+          display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:720px;
 }
