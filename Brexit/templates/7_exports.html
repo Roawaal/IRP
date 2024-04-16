@@ -145,8 +145,8 @@
 
 
 const optionChart0 = {
-    title: { // 添加标题配置，用于显示年份
-        text: '2015', // 初始显示2015年
+    title: {
+        text: '2015',
         left: 'center',
         textStyle: {
             color: '#333',
@@ -198,7 +198,7 @@ setInterval(function () {
 
     myChart6.setOption({
         title: {
-            text: currentYearChart0.toString() // 更新标题为当前年份
+            text: currentYearChart0.toString()
         },
         yAxis: {
             data: currentYearDataChart0.map(item => item[0])

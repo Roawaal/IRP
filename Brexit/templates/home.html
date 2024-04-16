@@ -95,7 +95,7 @@ input, button {
     <p>Prices adjusted by ONS(Office for National Statistics) implied deflators for trade MRET(UK trade time series: Monthly value of UK exports and imports of goods and services by current price, chained volume measures and implied deflators)
         <br />To better compare each year's values, it is necessary to adjust for the effects of economic inflation.
     </p>
-    <div id="dashboard_div" class="five-style">{% include '5_imexport.html' %}</div>
+    <div id="imexports" class="five-style">{% include '5_imexports.html' %}</div>
     <p>Since the year 2000, there has been a generally consistent upward trend in imports, exports and trade balance.
         It can be witnessed from the chart that the trade deficit in 2020 was the largest in the past 23 years and over the longer term it has widened by 45.93% from £20.01 billion (in 2000) to £33.20 billion (in 2022) in real terms.
     </p>
@@ -184,10 +184,76 @@ input, button {
             when looking at the change from 2019 to 2022, imports from non-EU countries increased (+6.89%), while imports from the EU decreased (-3.66%).
             It indicates a possiblely new balance of trade relations to new trade regulations after Brexit.
     </p>
-    <h3 class="h3-style">United Kingdom Food Products Top12 Exports(left), Imports(right) by countries 2015-2021 at each year's prices (US$ Thousand)<sup><a href="#note9">9</a></sup></h3>
+    <h3 class="h3-style">United Kingdom Food Products Exports(up), Imports(down) by regions 2015-2021 at each year's prices (US$ Thousand)<sup><a href="#note9">9</a></sup></h3>
+    <p>The following data is sourced from another authoritative organization worldbank, clearly illustrating the food import and export relationships between the UK and various regions, serving as a supplement to the dataset from HMRC.</p>
+    <div class="parallel0">
+        <div id="container8" class="nine-style">{% include '9_worldexports.html' %}</div>
+        <div id="container11" class="eleven-style">{% include '11_pie.html' %}</div>
+    </div>
+    <p></p>
+    <div class="parallel1">
+        <div id="container9" class="ten-style">{% include '10_worldimports.html' %}</div>
+        <div id="container12" class="twelve-style">{% include '12_pie.html' %}</div>
+    </div>
+    <h3 class="h3-style">United Kingdom Food Products Top12 Exports(up), Imports(down) by countries 2015-2021 at each year's prices (US$ Thousand)<sup><a href="#note10">10</a></sup></h3>
     <div id="chart0" class="seven-style">{% include '7_exports.html' %}</div>
+    <div id="chart1" class="eight-style">{% include '8_imports.html' %}</div>
+    <p>It can be seen that principal destinations for exports were the Ireland, France, USA, Netherlands and the Germany
+            as well as the main countries of despatch for imports into the UK were the Netherlands, France, Ireland, Germany and the Italy.
+           The chart showcases that EU were always a major trading partner for both UK's imports and exports.
+    </p>
+    <p>CAP (EU's Common Agricultural Policy) is a system of agricultural subsidies and programmes covering farming, environmental measures and rural development.
+        Having left the EU, the UK is now free to design its own agricultural policy to replace the CAP, although key elements of the CAP-based system currently remain in place.</p>
+    <p>Before Brexit, the government promised to match EU funding.<sup><a href="#note11">11</a></sup>
+    <br />Boris Johnson’s 2019 election manifesto had promised that post-Brexit replacement funding would “at a minimum match the size” of EU funds in “each nation” of the UK.
+    <p><i><span style="color: #055705;">However, the critical question remains: Were these promises fulfilled?</span></i></p>
+    <h3 class="h3-style">2010-2022 All CAP payments in Euros millions by funding stream for United Kingdom, shows payments after deduction for modulation where appropriate.<sup><a href="#note12">12</a></sup></h3>
+    <div id="container14" class="fourteen-style">{% include '14_ukcap.html' %}</div>
+    <p>The CAP is divided into two pillars. Pillar 1 covers direct support and market supports, and rural development is in Pillar 2, contained European Agricultural Fund for Rural Development (EAFRD) and Co-financing</p>
+    <p>Direct support consists of payments granted directly to farmers and provides baseline income support and operates as a safety net in cases of market disturbances. Market prices are for many current and future challenges, including global competition, economic and financial crises, climate.</p>
+    <h3 class="h3-style">2010-2022 All CAP payments in Euros million by funding stream for United Kingdom separated by regions<sup><a href="#note12">12</a></sup></h3>
+    <div id="pivot-container" class="fifteen-style">{% include '15_cap.html' %}</div>
+    <p></p>
+    <p>For more detailed CAP payments, use this link: <a href="https://cap-payments.defra.gov.uk/Search.aspx">Payments Search</a></p>
+    <p>When the UK was a member of the EU, the four governments were responsible for administering subsidies according to EU rules. Now, outside the EU, these administrations have the flexibility to develop their own subsidy schemes.
+        <br />Below are some policies introduced by each region's governments and we'll see whether the funding is on the same level before Brexit. Moreover, the Chancellor has confirmed nearly £3 billion of funding for 2020 to support farmers once the UK leaves the EU on 30 December 2019 and the funding is spread across two financial years.<sup><a href="#note13">13</a></sup>
+    </p>
+    <div class="flag-container">
+            <h2 class="h2"><a href="#id-4"><img src="static/flag/Flag-Wales.jpg" alt="Wales"></a></h2>
+            <br />
+            <h2 class="h2"><a href="#id-5"><img src="static/flag/Flag-England.jpg" alt="England"></a></h2>
+            <br />
+            <h2 class="h2"><a href="#id-6"><img src="static/flag/Flag-Northern-Ireland.jpg" alt="Northern Ireland"></a></h2>
+            <br />
+            <h2 class="h2"><a href="#id-7"><img src="static/flag/Flag-Scotland.jpg" alt="Scotland"></a></h2>
+            <br />
+    </div>
+    <div id="id-4">
+            <h3 class="h3-style">Wales</h3>
+            <p>In December 2020, the Welsh government published <a href="https://www.gov.wales/sites/default/files/consultations/2020-12/agriculture-wales-bill-white-paper.pdf">the Agriculture (Wales) white paper</a>. As in England, the concept of public money for public goods is described as central to the new ‘Sustainable Land Management policy framework’, which is also being developed through a process of co-design. </p>
+            <p>Wales’ rural affairs minister, Lesley Griffiths, has pledged to maintain the Basic Payment Scheme (BPS) at current levels for 2022 – provided the Welsh government receives the same funding from the UK government for agriculture.</p>
+        <p><i><span style="color: #055705;">However, the UK Government has failed to honour repeated promises that Wales would not be a penny worse off.</span></i></p>
+    </div>
+    <div id="id-5">
+            <h3 class="h3-style">England</h3>
+            <p>Defra is gradually introducing new schemes under the provisions of the Agriculture Act 2020. The main part of this new approach is known as Environmental Land Management (ELM). Funding will also be provided for productivity improvements and innovation on farms.</p>
+        <p><i><span style="color: #055705;">The Financial Times said that the documents showed that England was also set to receive almost 50 per cent less than originally pledged, getting £1.56bn by 2024-25 instead of £3bn.</span></i></p>
+    </div>
 
-    <hr/>
+    <div id="id-6">
+            <h3 class="h3-style">Northern Ireland</h3>
+            <p>Farmers in Northern Ireland are in a rather different position from those elsewhere in the UK because of the <a href="https://www.instituteforgovernment.org.uk/explainer/brexit-northern-ireland-protocol">Northern Ireland protocol</a>.</p>
+    </div>
+
+    <div id="id-7">
+            <h3 class="h3-style">Scotland</h3>
+            <p>In August 2020, the Scottish parliament passed the <a href="https://www.parliament.scot/bills-and-laws/bills/agriculture-retained-eu-law-and-data-scotland-bill">Agriculture (Retained EU Law and Data) (Scotland) Act</a>, which gave ministers the power to alter the inherited CAP regime.
+                In August 2021, the Scottish government consulted on the future of agricultural support in Scotland and established the <a href="https://www.gov.scot/groups/agriculture-reform-implementation-oversight-board/">Agricultural Reform Implementation Board</a> (made up of farmers, crofters and conservationists) to advise on policy development.</p>
+        <p><i><span style="color: #055705;"><a href="https://www.gov.scot/news/eu-replacement-funding-60-percent-shortfall/">EU replacement funding 60% shortfall</a>&nbsp; Only £212 million was to Scotland over a three-year period, when EU funding would have been worth £549 million.</span></i></p>
+    </div>
+    <h3 class="h3-style">Loss of funding to Wales as a result of the UK Government’s arrangements for replacement EU funding in millions in 2022 prices<sup><a href="#note14">14</a></sup></h3>
+            <p>2021-22 funding awarded through the Community Renewal Fund (the pilot for the UKSPF)</p>
+    <hr>
     <p><strong>Data from:</strong></p>
     <p id="note1"><sup>1</sup> https://www.imf.org/external/datamapper/NGDPD@WEO/GBR?year=2024
     <p id="note2"><sup>2</sup> worldbank.org
@@ -200,11 +266,11 @@ input, button {
     <p id="note7"><sup>7</sup> HMRC</p>
     <p id="note8"><sup>8</sup> ers.usda.gov</p>
     <p id="note9"><sup>9</sup> worldbank.org</p>
-
-    <p id="note"><sup></sup> </p>
-    <p id="note"><sup></sup> </p>
-    <p id="note"><sup></sup> </p>
-    <p id="note"><sup></sup> </p>
+    <p id="note10"><sup>10</sup> worldbank.org</p>
+    <p id="note11"><sup>11</sup> https://www.gov.uk/government/news/government-kickstarts-26-billion-investment-in-communities-as-uk-takes-back-control-of-eu-funding</p>
+    <p id="note12"><sup>12</sup> https://assets.publishing.service.gov.uk/media/6215ff49e90e0710b9a8bdff/AUK2020_22feb22.pdf </p>
+    <p id="note13"><sup>13</sup> https://www.gov.uk/government/news/farmers-3-billion-support-confirmed-in-time-for-2020</p>
+    <p id="note14"><sup>14</sup> https://www.gov.wales/written-statement-loss-funding-wales-result-uk-governments-arrangements-replacement-eu-funding</p>
     <script>
 
         window.onscroll = function() {

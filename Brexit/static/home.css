@@ -96,6 +96,15 @@ a:visited {
   height:480px;
   width:1000px;
 }
+.five-style {
+  padding: 20px;
+  border-radius: 5px;
+  height: 480px;
+          display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:720px;
+}
 .six-style {
        display: block;
   margin-left: auto;
@@ -115,11 +124,9 @@ a:visited {
 }
 
 .six_button {
-    font-size: 16px;
     color: #ffffff; /* white text */
     background-color: #4eb66d; /* green background */
     border: none;
-    border-radius: 25px; /* fully rounded ends */
     cursor: pointer;
     transition: all 0.3s ease; /* smooth transition */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -156,4 +163,101 @@ tr:hover {background-color: #c1eabc;}
   margin-left: auto;
   margin-right: auto;
   width:720px;
+}
+
+.eight-style {
+  padding: 20px;
+  border-radius: 5px;
+  height: 480px;
+          display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:720px;
+}
+
+
+.parallel0 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nine-style, .eleven-style {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
+  height: 320px;
+    width: 480px;
+  max-width: calc(40% - 10px);
+}
+
+
+
+.parallel1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ten-style, .twelve-style {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
+  height: 320px;
+    width: 480px;
+  max-width: calc(40% - 10px);
+}
+
+.fourteen-style {
+      padding: 20px;
+  border-radius: 5px;
+  height: 320px;
+          display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:810px;
+}
+
+.fourteen-button {
+        font-size: 16px;
+    color: #ffffff; /* white text */
+    background-color: #4eb66d; /* green background */
+    border: none;
+    border-radius: 25px; /* fully rounded ends */
+    cursor: pointer;
+    transition: all 0.3s ease; /* smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px; /* Add padding to size the button */
+    width: 20%;
+}
+
+.fifteen-style {
+  display: block;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+h2 {
+  text-align: left;
+  width: 60%;
+  word-wrap: break-word;
+  font-family:monospace;
+  font-size: 1.2rem;
+  padding: 1px;
+  margin: 10px auto;
+}
+
+.flag-container {
+  display: flex;
+  justify-content: space-between; /* Ensure flags are evenly spaced */
+  width: 60%; /* Container takes 60% of the page width */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.flag-container h2 {
+  margin: 0; /* Remove default margin */
+  flex: 1; /* Stretch each heading to fill the space */
+  text-align: center; /* Center the text */
+}
+
+.flag-container img {
+  width: 30%; /* Each image takes up 10% of the entire page width */
+  height: auto; /* Maintain aspect ratio */
 }
