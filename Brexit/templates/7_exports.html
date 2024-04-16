@@ -144,91 +144,82 @@
         };
 
 
-        const optionChart0 = {
-            xAxis: {
-                type: 'value'
-            },
-            yAxis: {
-                type: 'category',
-                data: [], // 将在后面动态更新
-                axisLabel: {
-                    formatter: function (value) {
-                        return value + '{flag|}';
-                    },
-                    rich: {
-                        flag: {
-                            fontSize: 20,
-                            padding: 5
-                        }
-                    }
-                }
-            },
-            series: [
-                {
-                    type: 'bar',
-                    data: [],
-                    label: {
-                        show: true,
-                        position: 'right',
-                        formatter: '{c}',
-                        fontSize: 14
-                    }
-                }
-            ],
-            animationDuration: 0,
-            animationDurationUpdate: updateFrequencyChart0,
-            animationEasing: 'linear',
-            animationEasingUpdate: 'linear'
-        };
-
-        myChart6.setOption(optionChart0);
-
-
-        const yearLabelsChart0 = [];
-        for (let year in yearsDataChart0) {
-            yearLabelsChart0.push({
-                type: 'text',
-                right: 10,
-                top: 20 + (year - 2015) * 30,
-                style: {
-                    text: year.toString(),
-                    font: 'bold 16px Arial',
-                }
-            });
+const optionChart0 = {
+    title: { // 添加标题配置，用于显示年份
+        text: '2015', // 初始显示2015年
+        left: 'center',
+        textStyle: {
+            color: '#333',
+            fontWeight: 'bold',
+            fontSize: 16
         }
-
-        myChart6.setOption({
-            graphic: {
-                elements: yearLabelsChart0
+    },
+    xAxis: {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: [],
+        axisLabel: {
+            formatter: function (value) {
+                return value + '{flag|}';
+            },
+            rich: {
+                flag: {
+                    fontSize: 20,
+                    padding: 5
+                }
             }
-        });
+        }
+    },
+    series: [
+        {
+            type: 'bar',
+            data: [],
+            label: {
+                show: true,
+                position: 'right',
+                formatter: '{c}',
+                fontSize: 14
+            }
+        }
+    ],
+    animationDuration: 0,
+    animationDurationUpdate: updateFrequencyChart0,
+    animationEasing: 'linear',
+    animationEasingUpdate: 'linear'
+};
+myChart6.setOption(optionChart0);
 
+let currentYearIndexChart0 = 0;
+setInterval(function () {
+    const currentYearChart0 = 2015 + currentYearIndexChart0;
+    const currentYearDataChart0 = yearsDataChart0[currentYearChart0];
 
-        let currentYearIndexChart0 = 0;
-        setInterval(function () {
-            const currentYearChart0 = 2015 + currentYearIndexChart0;
-            const currentYearDataChart0 = yearsDataChart0[currentYearChart0];
-            myChart6.setOption({
-                yAxis: {
-                    data: currentYearDataChart0.map(item => item[0])
-                },
-                series: [
-                    {
-                        data: currentYearDataChart0.map(item => ({
-                            value: item[1],
-                            itemStyle: {
-                                color: countryColorsChart0[item[0]] || '#5470c6'
-                            }
-                        }))
+    myChart6.setOption({
+        title: {
+            text: currentYearChart0.toString() // 更新标题为当前年份
+        },
+        yAxis: {
+            data: currentYearDataChart0.map(item => item[0])
+        },
+        series: [
+            {
+                data: currentYearDataChart0.map(item => ({
+                    value: item[1],
+                    itemStyle: {
+                        color: countryColorsChart0[item[0]] || '#5470c6'
                     }
-                ]
-            });
-
-            currentYearIndexChart0++;
-            if (currentYearIndexChart0 >= Object.keys(yearsDataChart0).length) {
-                currentYearIndexChart0 = 0;
+                }))
             }
-        }, updateFrequencyChart0);
+        ]
+    });
+
+    currentYearIndexChart0++;
+    if (currentYearIndexChart0 >= Object.keys(yearsDataChart0).length) {
+        currentYearIndexChart0 = 0;
+    }
+}, updateFrequencyChart0);
     </script>
 </body>
 </html>
