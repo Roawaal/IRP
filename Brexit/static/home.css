@@ -250,98 +250,14 @@ h2 {
   margin: 0 auto;
 }
 
+
+.seventeen-style {
+    width: 60%;
+  margin: 0 auto;
+}
+
 .eighteen-style{
       width: 60%;
   margin: 0 auto;
 }
 
-
-
-.wales-style {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.wales-style h2 {
-  text-align: center;
-}
-
-.wales-style #data-table {
-  border-collapse: collapse;
-  width: 75%;
-  margin: 0 auto;
-}
-
-/* Add the chart container styles here */
-.wales-style .chart-container {
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-/* Add the chart canvas styles here */
-.wales-style canvas {
-  display: block;
-  margin: auto;
-  max-width: 100%;
-  max-height: 400px;
-}
-
-.wales-style #data-table th,
-.wales-style #data-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.wales-style #data-table th {
-  background-color: #f2f2f2;
-}
-
-.wales-style tr:hover td:nth-child(5) {
-  background-color: #c7f1c2;
-}
-
-
-.wales-style button {
-  width: 25%;
-  padding: 10px 20px;
-  margin-right: 10px;
-  cursor: pointer;
-  background-color:  #036026;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.wales-style button:hover {
-  background-color: #036026;
-}
-
-.wales-style .reload-btn {
-  width: 25%;
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  cursor: pointer;
-  background-color:  #036026;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.wales-style .reload-btn:hover {
-  background-color: #036026;
-}
-.wales-style .button-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.wales-style .button-container button {
-  flex: 1;
-  max-width: calc(33.33% - 10px); /* 10px for margin-right */
-}
