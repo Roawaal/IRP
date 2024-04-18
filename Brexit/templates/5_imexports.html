@@ -29,11 +29,23 @@
     data: ['Imports', 'Exports', 'Trade balance']
   },
   grid: {
-    left: '3%',
+    left: '10%',
     right: '4%',
     bottom: '3%',
     containLabel: true
   },
+
+    dataZoom: [
+        {
+            type: 'slider',
+            start: 0,     // Starting zoom position in percentage
+            end: 100,     // Ending zoom position in percentage
+            orient: 'vertical',   // Orient the slider vertically
+            yAxisIndex: [0], // Apply the zoom to the first yAxis index
+            left: '100px',  // Set the position 20px from the left side of the container
+            width: '20px', // Optionally set the width of the slider
+        }
+    ],
   xAxis: [
     {
       type: 'value'

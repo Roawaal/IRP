@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag and Drop Example</title>
+<style>
+  .dropzone {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px dashed #007bff;
+    text-align: center;
+    line-height: 150px;
+    color: #007bff;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+  }
+
+  #draggable {
+    width: 100px;
+    height: 100px;
+    background-color: #ffcc00;
+    color: black;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* Style to indicate a successful drop */
+  .successful-drop {
+    border-color: #28a745; /* Green border to indicate success */
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+  }
+
+</style>
+</head>
+<body>
+<div class="dropzone">
+  <div id="draggable" draggable="true">Drag me!</div>
+</div>
+<div class="dropzone" id="droptarget">Drop here</div>
+
+<script>
+let dragged = null;
+
+// Event listener for the draggable element
+const source = document.getElementById("draggable");
+source.addEventListener("dragstart", (event) => {
+  // Store a reference on the dragged element
+  dragged = event.target;
+  // Optionally, you can add some styles or effects
+  event.target.style.opacity = "0.5";
+});
+
+// Event listener for the drop target
+const target = document.getElementById("droptarget");
+target.addEventListener("dragover", (event) => {
+  // Prevent default to allow drop
+  event.preventDefault();
+});
+
+target.addEventListener("drop", (event) => {
+  // Prevent default action (open as a link for some elements)
+  event.preventDefault();
+  // Move dragged element to the selected drop target
+  if (event.target.className.includes("dropzone")) {
+    dragged.parentNode.removeChild(dragged);
+    event.target.appendChild(dragged);
+    // Reset the opacity
+    dragged.style.opacity = "1";
+    // Change the target's appearance and text to indicate a successful drop
+    event.target.className += " successful-drop";
+    event.target.innerHTML = "<p>Successfully Dropped!</p>";
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highcharts Stock Chart Example</title>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://www.highcharts.com/samples/data/three-series-1000-points.js"></script>
+    <script src="https://blacklabel.github.io/custom_events/js/customEvents.js"></script>
+</head>
+<body>
+
+<div id="intervals" style="height: 400px; min-width: 310px"></div>
+
+<script>
+// Your JavaScript code starts here
+var isEvent = false;
+
+Highcharts.stockChart('intervals', {
+    chart: {
+        type: 'areaspline',
+        zoomType: 'x',
+        events: {
+            load: function() {
+                var chart = this;
+                chart.labelGroup = chart.renderer.g('labelGroup').add()
+                document.addEventListener('mouseup', function() {
+                    chart.mouseDown = false;
+                    if (chart.label) {
+                        chart.label.destroy()
+                        chart.label = undefined;
+                    }
+                    if (chart.selectionRect) {
+                        chart.selectionRect.destroy()
+                        chart.selectionRect = undefined;
+                    }
+                })
+            }
+        }
+    },
+    yAxis: {
+        gridLineWidth: 0,
+        min: 0
+    },
+    legend: {
+        enabled: true
+    },
+    plotOptions: {
+        areaspline: {
+            threshold: Infinity,
+            fillColor: '#fff',
+            marker: {
+                radius: 4
+            },
+            point: {
+                events: {
+                    mouseOver() {
+                        var point = this,
+                            chart = point.series.chart,
+                            dif,
+                            percentDif,
+                            rectWidth,
+                            sign,
+                            x;
+
+                        if (chart.mouseDown) {
+                            if (chart.label) {
+                                chart.label.destroy()
+                                chart.label = undefined;
+                            }
+                            if (chart.selectionRect) {
+                                chart.selectionRect.destroy()
+                                chart.selectionRect = undefined;
+                            }
+                            dif = point.y - chart.pointMouseDown.y;
+                            percentDif = Math.round(dif / chart.pointMouseDown.y * 10000) / 100 + '%'
+
+                            rectWidth = point.plotX - chart.pointMouseDown.plotX
+
+                            if (rectWidth > 0) {
+                                x = chart.plotLeft + chart.pointMouseDown.plotX
+                                sign = 1
+                            } else {
+                                x = chart.plotLeft + point.plotX
+                                sign = -1
+                            }
+                            var gradient = {
+                                linearGradient: [0, 0, 0, 300],
+                                stops: [
+                                    [0, '#fff'],
+                                    [0.2, '#fff'],
+                                    [0.2, '#7cb5ec'],
+                                    [1, '#fff']
+                                ]
+                            };
+                            chart.selectionRect = chart.renderer.rect(
+                                x, // x
+                                chart.plotTop, // y
+                                (point.plotX - chart.pointMouseDown.plotX) * sign, // width
+                                chart.plotSizeY // height
+                            ).attr({
+                                fill: gradient,
+                                zIndex: -1
+                            }).add()
+                            chart.label = chart.renderer.label(dif > 0 ? '+' + percentDif : percentDif, (x + (point.plotX - chart.pointMouseDown.plotX) * sign * 0.5), 60).add(chart.labelGroup)
+                            chart.labelGroup.translate(-chart.label.width / 2, 0).toFront()
+                        }
+                    },
+                    mousedown: function() {
+                        var point = this,
+                            chart = point.series.chart
+
+                        chart.mouseDown = true;
+                        chart.pointMouseDown = point;
+                    }
+                }
+            },
+        }
+    },
+    series: [{
+        name: 'A',
+        data: GOOGL
+    }]
+});
+// Your JavaScript code ends here
+</script>
+
+</body>
+</html>

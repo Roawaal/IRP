@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.1/axios.min.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
     <title>Home Page</title>
     <style>
@@ -34,7 +38,9 @@ input, button {
     padding: 8px;
     margin-right: 5px;
 }
+
     </style>
+
 </head>
 <body>
     <div id="progressBar"></div>
@@ -84,9 +90,7 @@ input, button {
     <div id="container0_modified" class="three-style">{% include '3_regions2017_2022.html'%}</div>
 
     <h3 class="h3-style">English Map(cannot successfully render now/create a new page for it)</h3>
-    <div id="container2" class="four-style">{% include '4_map.html'%}</div>
-
-    <p></p>
+    <p>Jump to /map</p>
     <p>Since the UK left the EU, the arrangements for how the UK trades with the EU have changed.
         The following section will apply data to display the impact of Brexit on UK's overseas trade in agricultural stuff, excluding other goods like material manufactures or fuels.</p>
     <p>Moreover, it will pay more attention to annual changes rather than quarterly's, as the seasonal fluctuations in UK agricultural are significant. For example, during the summer months,
@@ -218,41 +222,32 @@ input, button {
     <p>When the UK was a member of the EU, the four governments were responsible for administering subsidies according to EU rules. Now, outside the EU, these administrations have the flexibility to develop their own subsidy schemes.
         <br />Below are some policies introduced by each region's governments and we'll see whether the funding is on the same level before Brexit. Moreover, the Chancellor has confirmed nearly £3 billion of funding for 2020 to support farmers once the UK leaves the EU on 30 December 2019 and the funding is spread across two financial years.<sup><a href="#note13">13</a></sup>
     </p>
-    <div class="flag-container">
-            <h2 class="h2"><a href="#id-4"><img src="static/flag/Flag-Wales.jpg" alt="Wales"></a></h2>
-            <br />
-            <h2 class="h2"><a href="#id-5"><img src="static/flag/Flag-England.jpg" alt="England"></a></h2>
-            <br />
-            <h2 class="h2"><a href="#id-6"><img src="static/flag/Flag-Northern-Ireland.jpg" alt="Northern Ireland"></a></h2>
-            <br />
-            <h2 class="h2"><a href="#id-7"><img src="static/flag/Flag-Scotland.jpg" alt="Scotland"></a></h2>
-            <br />
-    </div>
-    <div id="id-4">
-            <h3 class="h3-style">Wales</h3>
-            <p>In December 2020, the Welsh government published <a href="https://www.gov.wales/sites/default/files/consultations/2020-12/agriculture-wales-bill-white-paper.pdf">the Agriculture (Wales) white paper</a>. As in England, the concept of public money for public goods is described as central to the new ‘Sustainable Land Management policy framework’, which is also being developed through a process of co-design. </p>
-            <p>Wales’ rural affairs minister, Lesley Griffiths, has pledged to maintain the Basic Payment Scheme (BPS) at current levels for 2022 – provided the Welsh government receives the same funding from the UK government for agriculture.</p>
-        <p><i><span style="color: #055705;">However, the UK Government has failed to honour repeated promises that Wales would not be a penny worse off.</span></i></p>
-    </div>
-    <div id="id-5">
-            <h3 class="h3-style">England</h3>
-            <p>Defra is gradually introducing new schemes under the provisions of the Agriculture Act 2020. The main part of this new approach is known as Environmental Land Management (ELM). Funding will also be provided for productivity improvements and innovation on farms.</p>
-        <p><i><span style="color: #055705;">The Financial Times said that the documents showed that England was also set to receive almost 50 per cent less than originally pledged, getting £1.56bn by 2024-25 instead of £3bn.</span></i></p>
-    </div>
-
-    <div id="id-6">
-            <h3 class="h3-style">Northern Ireland</h3>
-            <p>Farmers in Northern Ireland are in a rather different position from those elsewhere in the UK because of the <a href="https://www.instituteforgovernment.org.uk/explainer/brexit-northern-ireland-protocol">Northern Ireland protocol</a>.</p>
-    </div>
-
-    <div id="id-7">
-            <h3 class="h3-style">Scotland</h3>
-            <p>In August 2020, the Scottish parliament passed the <a href="https://www.parliament.scot/bills-and-laws/bills/agriculture-retained-eu-law-and-data-scotland-bill">Agriculture (Retained EU Law and Data) (Scotland) Act</a>, which gave ministers the power to alter the inherited CAP regime.
-                In August 2021, the Scottish government consulted on the future of agricultural support in Scotland and established the <a href="https://www.gov.scot/groups/agriculture-reform-implementation-oversight-board/">Agricultural Reform Implementation Board</a> (made up of farmers, crofters and conservationists) to advise on policy development.</p>
-        <p><i><span style="color: #055705;"><a href="https://www.gov.scot/news/eu-replacement-funding-60-percent-shortfall/">EU replacement funding 60% shortfall</a>&nbsp; Only £212 million was to Scotland over a three-year period, when EU funding would have been worth £549 million.</span></i></p>
-    </div>
+    <div class="sixteen-style">{% include '16_regions.html' %}</div>
     <h3 class="h3-style">Loss of funding to Wales as a result of the UK Government’s arrangements for replacement EU funding in millions in 2022 prices<sup><a href="#note14">14</a></sup></h3>
             <p>2021-22 funding awarded through the Community Renewal Fund (the pilot for the UKSPF)</p>
+    <div id="data-table" class="wales-style">{% include '17_wales.html' %}</div>
+    {% include '20_drag.html' %}
+    <h3 class="h3-style">Yearly counts of payrolled employments in the United Kingdom by industry for UK, EU and non-EU nationals</h3>
+    <div id="test-container" class="test-style">{% include '19_test.html' %}</div>
+    <p>By September 2022, there was a significant shortfall of around 460,000 EU-origin workers, partly but not wholly compensated for by an increase of about 130,000 non-EU workers. The net loss of workers – around 330,000 – is 1% of the labour force.</p>
+    <p>But Mr Foster hit back, arguing there was a “problem with uptake” and blaming employers for failing to sign up to a visa scheme to bring in workers.
+            Warnings of farm labour shortages have raged for months, after Brexit slammed the door on the ability of EU nationals to move to the UK and work freely.</p>
+            <p>Labour shortages cost millions in fruit and veg waste: Seasonal Worker visa (Temporary Work)</p>
+    <p>NFU Scotland has highlighted severe difficulties replacing EU workers with UK staff, with horticulture chair Ian Brown stating, “we need migrants to get the food that is grown on our farms onto our plates, and not rotting in our fields.”</p>
+    <h3 class="h3-style">Brexit exacerbated labour shortages in the UK, but is not the only cause</h3>
+    <p>Farming businesses: working after Brexit transition</p>
+    <h3 class="h3-style">Brexit or no Brexit</h3>
+    <div id="intervals">{% include '18_opinion.html' %}</div>
+    <p>Farmer Opinion Tracker for England: October 2022<br />
+        https://www.gov.uk/government/statistics/farmer-opinion-tracker-for-england-october-2022/farmer-opinion-tracker-for-england-october-2022
+    </p>
+    <p>Funding for flood and coastal erosion risk management in England</p>
+    <h3 class="h3-style">Google Trends</h3>
+    <p>“There may well be grants and subsidies but we don’t know what they are going to be yet. We know they have said public money for public good.
+        But it doesn’t mean anything, that is just a slogan.” By Jeremy Clarkson</p>
+
+    <h5>Notes: The common agricultural policy (cap), which Britain leaves on January 1st after 47 years,
+        has been a lousy deal for the country.</h5>
     <hr>
     <p><strong>Data from:</strong></p>
     <p id="note1"><sup>1</sup> https://www.imf.org/external/datamapper/NGDPD@WEO/GBR?year=2024
