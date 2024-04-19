@@ -227,8 +227,9 @@ input, button {
             <p>2021-22 funding awarded through the Community Renewal Fund (the pilot for the UKSPF)</p>
     <div id="my-pivot-container" class="seventeen-style">{% include '17_welch.html' %}</div>
     {% include '20_drag.html' %}
-    <h3 class="h3-style">Yearly counts of payrolled employments in the United Kingdom by industry for UK, EU and non-EU nationals</h3>
-    <div id="test-container" class="test-style">{% include '19_test.html' %}</div>
+    <h3 class="h3-style">Yearly counts of payrolled employments in the United Kingdom by industry for UK, EU and non-EU nationals<sup><a href="#note15">15</a></sup></h3>
+    <p>Use tree map for this</p>
+    {% include 'radar-aqi.html' %}
     <p>By September 2022, there was a significant shortfall of around 460,000 EU-origin workers, partly but not wholly compensated for by an increase of about 130,000 non-EU workers. The net loss of workers – around 330,000 – is 1% of the labour force.</p>
     <p>But Mr Foster hit back, arguing there was a “problem with uptake” and blaming employers for failing to sign up to a visa scheme to bring in workers.
             Warnings of farm labour shortages have raged for months, after Brexit slammed the door on the ability of EU nationals to move to the UK and work freely.</p>
@@ -236,13 +237,16 @@ input, button {
     <p>NFU Scotland has highlighted severe difficulties replacing EU workers with UK staff, with horticulture chair Ian Brown stating, “we need migrants to get the food that is grown on our farms onto our plates, and not rotting in our fields.”</p>
     <h3 class="h3-style">Brexit exacerbated labour shortages in the UK, but is not the only cause</h3>
     <p>Farming businesses: working after Brexit transition</p>
+
     <h3 class="h3-style">Brexit or no Brexit</h3>
-    <div id="intervals">{% include '18_opinion.html' %}</div>
+    <h3 class="h3-style">How well or badly do you think the government is handling the following issues? Britain's exit from the EU<sup><a href="#note16">16</a></sup></h3>
+    <div id="tabs21" class="twentyone-style">{% include '21_tab.html' %}</div>
     <p>Farmer Opinion Tracker for England: October 2022<br />
         https://www.gov.uk/government/statistics/farmer-opinion-tracker-for-england-october-2022/farmer-opinion-tracker-for-england-october-2022
     </p>
     <p>Funding for flood and coastal erosion risk management in England</p>
     <h3 class="h3-style">Google Trends</h3>
+    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3700_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"Brexit","geo":"GB","time":"2008-01-01 2024-04-19"}],"category":0,"property":"images"}, {"exploreQuery":"date=all_2008&geo=GB&gprop=images&q=Brexit&hl=en-US","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
     <p>“There may well be grants and subsidies but we don’t know what they are going to be yet. We know they have said public money for public good.
         But it doesn’t mean anything, that is just a slogan.” By Jeremy Clarkson</p>
 
@@ -266,6 +270,8 @@ input, button {
     <p id="note12"><sup>12</sup> https://assets.publishing.service.gov.uk/media/6215ff49e90e0710b9a8bdff/AUK2020_22feb22.pdf </p>
     <p id="note13"><sup>13</sup> https://www.gov.uk/government/news/farmers-3-billion-support-confirmed-in-time-for-2020</p>
     <p id="note14"><sup>14</sup> https://www.gov.wales/written-statement-loss-funding-wales-result-uk-governments-arrangements-replacement-eu-funding</p>
+    <p id="note15"><sup>15</sup> https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-and-industry-from-july-2014-to-december-2022/uk-payrolled-employments-by-nationality-region-and-industry-from-july-2014-to-december-2022</p>
+    <p id="note16"><sup>16</sup> https://yougov.co.uk/_pubapis/v5/uk/trackers/how-the-government-is-handling-the-issue-of-brexit-in-the-uk</p>
     <script>
 
         window.onscroll = function() {
