@@ -8,119 +8,125 @@
 
   <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
   <script type="text/javascript">
-    // Initialize the DOM element for the chart
     var dom100 = document.getElementById('container100');
     var myChart100 = echarts.init(dom100, null, {
       renderer: 'canvas',
       useDirtyRect: false
     });
 
-    // Data for each region and year
-    const dataBJ = [
-      [25217400, 25386500, 25629300, 25798400, 25895000, 25039100, 26078700, 26356000],
-      [151400, 151400, 152700, 154000, 156600, 153900, 161400, 159800],
-    ];
-    const dataGZ = [
-      [2212900, 2406100, 2520900, 2590800, 2637700, 2449900, 2477000, 2472100],
-      [26800, 26800, 27800, 27200, 26900, 24200, 22400, 21300],
-    ];
-    const dataSH = [
-      [1760200, 1813800, 1886900, 1974400, 2110600, 2122600, 2426800, 2969200],
-      [2300, 2200, 2200, 2200, 2700, 3300, 5300, 7400],
-    ];
+const dataBJ = [
+  [55, 9, 56, 0.46, 18, 6, 1],
+  [25, 11, 21, 0.65, 34, 9, 2],
 
-    // Radar chart options setup
-    var option100 = {
-      backgroundColor: '#161627',
-      legend: {
-        bottom: 5,
-        data: ['UK', 'EU', 'Non-EU'],
-        itemGap: 20,
-        textStyle: {
-          color: '#fff',
-          fontSize: 14
-        },
-        selectedMode: 'single'
-      },
-      radar: {
-        indicator: [
-          { name: '2015', max: 27000000 },
-          { name: '2016', max: 27000000 },
-          { name: '2017', max: 27000000 },
-          { name: '2018', max: 27000000 },
-          { name: '2019', max: 27000000 },
-          { name: '2020', max: 27000000 },
-          { name: '2021', max: 27000000 },
-          { name: '2022', max: 27000000 },
-        ],
-        shape: 'circle',
-        splitNumber: 5,
-        axisName: {
-          color: 'rgb(238, 197, 102)'
-        },
-        splitLine: {
-          lineStyle: {
-            color: [
-              'rgba(238, 197, 102, 0.1)',
-              'rgba(238, 197, 102, 1)'
-            ].reverse()
-          }
-        },
-        splitArea: {
-          show: false
-        },
-        axisLine: {
-          lineStyle: {
-            color: 'rgba(238, 197, 102, 0.5)'
-          }
-        }
-      },
-      series: [
-        {
-          name: 'UK',
-          type: 'radar',
-          data: dataBJ,
-          symbol: 'none',
-          itemStyle: {
-            color: '#F9713C'
-          },
-          areaStyle: {
-            opacity: 0.1
-          }
-        },
-        {
-          name: 'EU',
-          type: 'radar',
-          data: dataSH,
-          symbol: 'none',
-          itemStyle: {
-            color: '#B3E4A1'
-          },
-          areaStyle: {
-            opacity: 0.05
-          }
-        },
-        {
-          name: 'Non-EU',
-          type: 'radar',
-          data: dataGZ,
-          symbol: 'none',
-          itemStyle: {
-            color: 'rgb(238, 197, 102)'
-          },
-          areaStyle: {
-            opacity: 0.05
-          }
-        }
-      ]
-    };
+];
+const dataGZ = [
+  [26, 37, 27, 1.163, 27, 13, 1],
+  [85, 62, 71, 1.195, 60, 8, 2],
 
-    // Apply options and render the chart
+];
+const dataSH = [
+  [91, 45, 125, 0.82, 34, 23, 1],
+  [65, 27, 78, 0.86, 45, 29, 2],
+
+];
+const lineStyle = {
+  width: 1,
+  opacity: 0.5
+};
+option100 = {
+  backgroundColor: '#ffffff',
+
+  legend: {
+    bottom: 5,
+    data: ['Beijing', 'Shanghai', 'Guangzhou'],
+    itemGap: 20,
+    textStyle: {
+      color: '#fff',
+      fontSize: 14
+    },
+    selectedMode: 'single'
+  },
+  radar: {
+    indicator: [
+      { name: 'AQI', max: 300 },
+      { name: 'PM2.5', max: 250 },
+      { name: 'PM10', max: 300 },
+      { name: 'CO', max: 5 },
+      { name: 'NO2', max: 200 },
+      { name: 'SO2', max: 100 }
+    ],
+    shape: 'circle',
+    splitNumber: 5,
+    axisName: {
+      color: 'rgb(238, 197, 102)'
+    },
+    splitLine: {
+      lineStyle: {
+        color: [
+          'rgba(238, 197, 102, 0.1)',
+          'rgba(238, 197, 102, 0.2)',
+          'rgba(238, 197, 102, 0.4)',
+          'rgba(238, 197, 102, 0.6)',
+          'rgba(238, 197, 102, 0.8)',
+          'rgba(238, 197, 102, 1)'
+        ].reverse()
+      }
+    },
+    splitArea: {
+      show: false
+    },
+    axisLine: {
+      lineStyle: {
+        color: 'rgba(238, 197, 102, 0.5)'
+      }
+    }
+  },
+  series: [
+    {
+      name: 'Beijing',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataBJ,
+      symbol: 'none',
+      itemStyle: {
+        color: '#F9713C'
+      },
+      areaStyle: {
+        opacity: 0.1
+      }
+    },
+    {
+      name: 'Shanghai',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataSH,
+      symbol: 'none',
+      itemStyle: {
+        color: '#B3E4A1'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+    {
+      name: 'Guangzhou',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataGZ,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(238, 197, 102)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    }
+  ]
+};
     if (option100 && typeof option100 === 'object') {
       myChart100.setOption(option100);
     }
 
-    // Resize the chart when the window is resized
     window.addEventListener('resize', myChart100.resize);
   </script>
 </body>
