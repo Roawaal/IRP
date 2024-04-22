@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs Example</title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='tab.css') }}">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+<body>
+
+<div id="tabs21">
+  <ul>
+    <li><a href="#tabs-1">I voted for remain</a></li>
+    <li><a href="#tabs-2">leave</a></li>
+  </ul>
+  <div id="tabs-1">
+    <div id="container18" class="style18">{% include '18_opinions.html' %}</div>
+  </div>
+  <div id="tabs-2">
+      <div id="container19" class="style19">{% include '18_opinion.html' %}</div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#tabs21" ).tabs();
+  });
+</script>
+
+</body>
+</html>

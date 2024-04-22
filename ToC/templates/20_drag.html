@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag and Drop Example</title>
+<style>
+.dropzone {
+  width: calc(20% - 20px); /* 33.33% width for each box with 20px margin */
+  height: 150px;
+  margin: 10px;
+  padding: 10px;
+  border: 2px dashed #007bff;
+  text-align: center;
+  line-height: 150px;
+  color: #007bff;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  display: inline-block; /* Display boxes inline */
+  vertical-align: top; /* Align boxes to the top */
+}
+
+#draggable {
+  width: 100px;
+  height: 100px;
+  background-color: #ffcc00;
+  color: black;
+  line-height: 100px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+  /* Style to indicate a successful drop */
+  .successful-drop {
+    border-color: #28a745; /* Green border to indicate success */
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+  }
+
+</style>
+</head>
+<body>
+<div class="dropzone">
+  <div id="funding-wales" class="draggable" draggable="true">Funding if Wales remained EU</div>
+</div>
+<div class="dropzone">
+  <div id="eu-farm-funding" class="draggable" draggable="true">EU Farm Funding Shortfall</div>
+</div>
+<div class="dropzone" id="droptarget">Wales SPF Allocation</div>
+
+<script>
+let dragged = null;
+
+// Event listeners for draggable elements
+const draggableElements = document.querySelectorAll(".draggable");
+draggableElements.forEach((element) => {
+  element.addEventListener("dragstart", (event) => {
+    dragged = event.target;
+    event.target.style.opacity = "0.5";
+  });
+});
+
+// Event listener for the drop target
+const target = document.getElementById("droptarget");
+target.addEventListener("dragover", (event) => {
+  event.preventDefault();
+});
+
+target.addEventListener("drop", (event) => {
+  event.preventDefault();
+  if (event.target.className.includes("dropzone")) {
+    dragged.parentNode.removeChild(dragged);
+    event.target.appendChild(dragged);
+    dragged.style.opacity = "1";
+    event.target.className += " successful-drop";
+    event.target.innerHTML = calculateSPFAllocation();
+  }
+});
+
+// Function to calculate SPF allocation
+function calculateSPFAllocation() {
+  const fundingWales = parseFloat(document.getElementById("funding-wales").innerText);
+  const euFarmFunding = parseFloat(document.getElementById("eu-farm-funding").innerText);
+  const totalAllocation = /* Your logic here */ fundingWales - euFarmFunding;
+  return `<p>Wales SPF Allocation: ${totalAllocation}</p>`;
+}
+</script>
+</body>
+</html>
