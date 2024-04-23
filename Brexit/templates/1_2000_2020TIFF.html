@@ -4,21 +4,21 @@
   <meta charset="utf-8">
 </head>
 <body style="height: 100%; margin: 0">
-  <div id="container4" style="height: 100%"></div>
+  <div id="container400" style="height: 100%"></div>
 
 
   <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js"></script>
   <script type="text/javascript">
-    var dom4 = document.getElementById('container4');
-    var myChart4 = echarts.init(dom4, null, {
+    var dom400 = document.getElementById('container400');
+    var myChart400 = echarts.init(dom400, null, {
       renderer: 'canvas',
       useDirtyRect: false
     });
     var app = {};
 
-    var option4;
+    var option400;
 
-    option4 = {
+    option400 = {
   tooltip: {
     trigger: 'axis'
   },
@@ -78,11 +78,11 @@
   ]
 };
 
-    if (option4 && typeof option4 === 'object') {
-      myChart4.setOption(option4);
+    if (option400 && typeof option400 === 'object') {
+      myChart400.setOption(option400);
     }
 
-    window.addEventListener('resize', myChart4.resize);
+    window.addEventListener('resize', myChart400.resize);
   </script>
 </body>
 </html>

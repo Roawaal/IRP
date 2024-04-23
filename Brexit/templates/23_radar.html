@@ -14,49 +14,50 @@
       useDirtyRect: false
     });
 
-const dataBJ = [
-  [55, 9, 56, 0.46, 18, 6, 1],
-  [25, 11, 21, 0.65, 34, 9, 2],
-
+const dataA = [25217400, 151400,2212900,26800,1760200,2300
 ];
-const dataGZ = [
-  [26, 37, 27, 1.163, 27, 13, 1],
-  [85, 62, 71, 1.195, 60, 8, 2],
-
+const dataB = [25386500, 151400, 2406100, 26800, 1813800, 2200
 ];
-const dataSH = [
-  [91, 45, 125, 0.82, 34, 23, 1],
-  [65, 27, 78, 0.86, 45, 29, 2],
-
+const dataC = [25629300, 152700, 2520900, 27800, 1886900, 2200
+];
+const dataD = [25798400, 154000, 2590800, 27200, 1974400, 2200
+];
+const dataE = [25895000, 156600, 2637700, 26900, 2110600, 2700
+];
+const dataF = [25039100, 153900, 2449900, 24200, 2122600, 3300
+];
+const dataG = [26078700, 161400, 2477000, 22400, 2426800, 5300
+];
+const dataH = [26356000, 159800, 2472100, 21300, 2969200, 7400
 ];
 const lineStyle = {
-  width: 1,
-  opacity: 0.5
+  width: 10,
+  opacity: 1
 };
 option100 = {
   backgroundColor: '#ffffff',
 
-  legend: {
-    bottom: 5,
-    data: ['Beijing', 'Shanghai', 'Guangzhou'],
-    itemGap: 20,
-    textStyle: {
-      color: '#fff',
-      fontSize: 14
-    },
-    selectedMode: 'single'
+legend: {
+  bottom: 5,
+  data: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'], // Match these with the series names
+  itemGap: 20,
+  textStyle: {
+    color: '#000', // Changed color to black for visibility
+    fontSize: 14
   },
+  selectedMode: 'single' // Changed to 'multiple' to allow selecting multiple datasets
+},
   radar: {
     indicator: [
-      { name: 'AQI', max: 300 },
-      { name: 'PM2.5', max: 250 },
-      { name: 'PM10', max: 300 },
-      { name: 'CO', max: 5 },
-      { name: 'NO2', max: 200 },
-      { name: 'SO2', max: 100 }
+      { name: 'UK', max: 27000000 },
+      { name: 'UK.Agri', max: 160000 },
+      { name: 'EU', max: 2700000 },
+      { name: 'EU.Agri', max:30000},
+      { name: 'Non-EU', max: 3000000 },
+      { name: 'Non-EU.Agri', max: 8000 },
     ],
     shape: 'circle',
-    splitNumber: 5,
+    splitNumber: 6,
     axisName: {
       color: 'rgb(238, 197, 102)'
     },
@@ -83,39 +84,104 @@ option100 = {
   },
   series: [
     {
-      name: 'Beijing',
+      name: '2015',
       type: 'radar',
       lineStyle: lineStyle,
-      data: dataBJ,
+      data: dataA,
       symbol: 'none',
       itemStyle: {
-        color: '#F9713C'
+        color: 'rgb(124,252,0)'
       },
       areaStyle: {
         opacity: 0.1
       }
     },
     {
-      name: 'Shanghai',
+      name: '2016',
       type: 'radar',
       lineStyle: lineStyle,
-      data: dataSH,
+      data: dataB,
       symbol: 'none',
       itemStyle: {
-        color: '#B3E4A1'
+        color: 'rgb(50,205,50)'
       },
       areaStyle: {
         opacity: 0.05
       }
     },
     {
-      name: 'Guangzhou',
+      name: '2017',
       type: 'radar',
       lineStyle: lineStyle,
-      data: dataGZ,
+      data: dataC,
       symbol: 'none',
       itemStyle: {
-        color: 'rgb(238, 197, 102)'
+        color: 'rgb(0,128,0)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+          {
+      name: '2018',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataD,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(154,205,50)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+          {
+      name: '2019',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataE,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(144,238,144)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+          {
+      name: '2020',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataF,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(60,179,113)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+          {
+      name: '2021',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataG,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(85,107,47)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+          {
+      name: '2022',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataH,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(107,142,35)'
       },
       areaStyle: {
         opacity: 0.05

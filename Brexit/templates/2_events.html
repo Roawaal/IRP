@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" style="height: 100%">
 <head>
-    <title>events</title>
+  <meta charset="utf-8">
+
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/timeline.js"></script>
     <style>
@@ -25,10 +26,13 @@
 
     <script>
         Highcharts.chart('event', {
-            chart: {
-                zoomType: 'x',
-                inverted: true
-            },
+    chart: {
+        zoomType: 'x',
+        inverted: true
+    },
+    title: {
+        text: null
+    },
             xAxis: {
                 type: 'datetime',
                 visible: true,
@@ -61,11 +65,22 @@
       name: 'Brexit',
       label: 'Brexit',
       description: "Following a referendum on 23 June 2016, Brexit officially took place at 23:00 GMT on 31 January 2020 (00:00 1 February 2020 CET). The UK is the only sovereign country to have left the EU. "
-    }, {
+    },
+         {
+      x: Date.UTC(2021, 3),
+      name: 'HPAI H5N8 virus',
+      label: 'HPAI H5N8 virus',
+      description: "In March 2021, there were reports of HPAI H5N8 virus in seals in the United Kingdom, Germany58, and Denmark. Several subtypes of avian influenza viruses (H7N761, 63, H4N562, H4N660, H3N360and H10N759) have caused epidemics in seals."
+    },{
       x: Date.UTC(2022, 2, 24),
       name: 'Russo-Ukrainian War',
       label: 'Russo-Ukrainian War',
       description: "Russia invaded Ukraine in an escalation of the Russo-Ukrainian War that started in 2014"
+    }, {
+      x: Date.UTC(2022, 5),
+      name: 'Pig market disruption',
+      label: 'Pig market disruption',
+      description: "UK pigmeat production over the first half of this year was 13% down on 2022 and the lowest figure recorded since 2017, as pig supplies fell to a 10-year low. "
     }, {
       x: Date.UTC(2022, 7, 19),
       name: 'Highest UK temperature 40.3C',
@@ -82,7 +97,7 @@
 
         Highcharts.chart('event2', {
             series: [{
-                data: [12, 4, 19, 4, 23]
+                data: [12, 4, 19, 10, 4, 23]
             }]
         });
     </script>

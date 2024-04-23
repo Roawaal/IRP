@@ -24,10 +24,12 @@ var mapping = dataTable.mapAs({'value': 1});
 // create stock chart
 var chart = anychart.stock();
 
-    var series1 = chart.plot(0).line(mapping);
-    var series2 = chart.plot(0).line(getWellData());
-    var series3 = chart.plot(0).line(getBadlyData());
-
+    var series0 = chart.plot(0).line(mapping);
+    series0.name("Well");
+    var series1 = chart.plot(0).line(getWellData());
+    series1.name("Badly");
+    var series2 = chart.plot(0).line(getBadlyData());
+    series2.name("DontKnow");
 // events
 // create a listener function
 listener = function(e){
