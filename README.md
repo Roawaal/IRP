@@ -9,8 +9,8 @@
 - [x] 2.3 UK’s Overseas Trade 
 - [x] 2.4 Farm Subsidies Post-Brexit 
 - [ ] 2.5 UK Labour Market 
-- [ ] 2.6 Brexit or Bremain: Public Opinions 
-- [ ] 2.7 Key Influential Events
+- [x] 2.6 Brexit or Bremain: Public Opinions 
+- [x] 2.7 Key Influential Events
 - [ ] 3.1 Project Overview 
 - [ ] 3.2 Website Design
 - [ ] 3.3 Data Visualization 
