@@ -12,8 +12,8 @@
 - [x] 2.6 Brexit or Bremain: Public Opinions 
 - [x] 2.7 Key Influential Events
 - [ ] 3.1 Project Overview 
-- [ ] 3.2 Website Design
-- [ ] 3.3 Data Visualization 
+- [x] 3.2 Website Design
+- [x] 3.3 Data Visualization 
 - [ ] 3.4 Deployment and Security 
 - [ ] 4.1 Currant Project Status 
 - [ ] 4.2 Evaluation with Project Aims 
