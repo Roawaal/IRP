@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 70%; margin: 0">
+  <div id="container100" style="height: 70%"></div>
+
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+  <script type="text/javascript">
+    var dom100 = document.getElementById('container100');
+    var myChart100 = echarts.init(dom100, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+
+const dataA = [25217400, 151400,2212900,26800,1760200,2300
+];
+const dataB = [25386500, 151400, 2406100, 26800, 1813800, 2200
+];
+const dataC = [25629300, 152700, 2520900, 27800, 1886900, 2200
+];
+const dataD = [25798400, 154000, 2590800, 27200, 1974400, 2200
+];
+const dataE = [25895000, 156600, 2637700, 26900, 2110600, 2700
+];
+const dataF = [25039100, 153900, 2449900, 24200, 2122600, 3300
+];
+const dataG = [26078700, 161400, 2477000, 22400, 2426800, 5300
+];
+const dataH = [26356000, 159800, 2472100, 21300, 2969200, 7400
+];
+const lineStyle = {
+  width: 10,
+  opacity: 1
+};
+option100 = {
+  backgroundColor: '#ffffff',
+
+legend: {
+  bottom: 5,
+  data: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'], // Match these with the series names
+  itemGap: 20,
+  textStyle: {
+    color: '#000', // Changed color to black for visibility
+    fontSize: 14
+  },
+  selectedMode: 'single' // Changed to 'multiple' to allow selecting multiple datasets
+},
+  radar: {
+    indicator: [
+      { name: 'UK', max: 27000000 },
+      { name: 'UK.Agri', max: 160000 },
+      { name: 'EU', max: 2700000 },
+      { name: 'EU.Agri', max:30000},
+      { name: 'Non-EU', max: 3000000 },
+      { name: 'Non-EU.Agri', max: 8000 },
+    ],
+    shape: 'circle',
+    splitNumber: 6,
+    axisName: {
+      color: 'rgb(238, 197, 102)'
+    },
+    splitLine: {
+      lineStyle: {
+        color: [
+          'rgba(238, 197, 102, 0.1)',
+          'rgba(238, 197, 102, 0.2)',
+          'rgba(238, 197, 102, 0.4)',
+          'rgba(238, 197, 102, 0.6)',
+          'rgba(238, 197, 102, 0.8)',
+          'rgba(238, 197, 102, 1)'
+        ].reverse()
+      }
+    },
+    splitArea: {
+      show: false
+    },
+    axisLine: {
+      lineStyle: {
+        color: 'rgba(238, 197, 102, 0.5)'
+      }
+    }
+  },
+  series: [
+    {
+      name: '2015',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataA,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(124,252,0)'
+      },
+      areaStyle: {
+        opacity: 0.1
+      }
+    },
+    {
+      name: '2016',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataB,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(50,205,50)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+    {
+      name: '2017',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataC,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(0,128,0)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+          {
+      name: '2018',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataD,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(154,205,50)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+          {
+      name: '2019',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataE,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(144,238,144)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+          {
+      name: '2020',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataF,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(60,179,113)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+          {
+      name: '2021',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataG,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(85,107,47)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+          {
+      name: '2022',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: dataH,
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(107,142,35)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    }
+  ]
+};
+    if (option100 && typeof option100 === 'object') {
+      myChart100.setOption(option100);
+    }
+
+    window.addEventListener('resize', myChart100.resize);
+  </script>
+</body>
+</html>

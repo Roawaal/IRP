@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Arial;
+}
+
+#myInput {
+    width: 75%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+#myTable {
+    border-collapse: collapse;
+    width: 75%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+#myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+}
+
+#myTable tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.tab {
+    margin: 20px auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly around each button */
+    align-items: center; /* Vertically centers the content of each button */
+    padding: 5px;
+}
+
+.tablinks {
+    flex: 1; /* Ensures each tablink button has the same width */
+    padding: 5px;
+    text-align: center; /* Centers the content of the button */
+    background-color: white;
+    border-radius: 2px;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tab button img {
+    width: 50px; /* Fixed width for all images */
+    height: 30px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures the images cover the set area without distorting ratio */
+}
+
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+
+p {
+    text-align: left;
+    width: 60%;
+    word-wrap: break-word;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 5px;
+    margin: 20px auto;
+}
+</style>
+
+</head>
+<body>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for ..." title="Type in a name">
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, '0')" id="defaultOpen"><img src="static/flag/Flag-Wales.jpg" alt="Wales"></button>
+  <button class="tablinks" onclick="openCity(event, '1')" id="defaultOpen"><img src="static/flag/Flag-England.jpg" alt="England"></button>
+  <button class="tablinks" onclick="openCity(event, '2')" id="defaultOpen"><img src="static/flag/Flag-Northern-Ireland.jpg" alt="Northern Ireland"></button>
+    <button class="tablinks" onclick="openCity(event, '3')" id="defaultOpen"><img src="static/flag/Flag-Scotland.jpg" alt="Scotland"></button>
+</div>
+
+<div id="0" class="tabcontent">
+  <span class="topright" onclick="this.parentElement.style.display='none'">&times;</span>
+<table>
+  <tr>
+    <td>Wales</td>
+      <td>  &nbsp;            <p>In December 2020, the Welsh government published <a href="https://www.gov.wales/sites/default/files/consultations/2020-12/agriculture-wales-bill-white-paper.pdf">the Agriculture (Wales) white paper</a>. As in England, the concept of public money for public goods is described as central to the new ‘Sustainable Land Management policy framework’, which is also being developed through a process of co-design. </p>
+            <p>Wales’ rural affairs minister, Lesley Griffiths, has pledged to maintain the Basic Payment Scheme (BPS) at current levels for 2022 – provided the Welsh government receives the same funding from the UK government for agriculture.</p>
+            <p><i><span style="color: #055705;">However, the UK Government has failed to honour repeated promises that Wales would not be a penny worse off.</span></i></p>
+      </td>
+  </tr>
+</table>
+
+</div>
+<div id="1" class="tabcontent">
+  <span class="topright" onclick="this.parentElement.style.display='none'">&times;</span>
+<table>
+  <tr>
+    <td>England</td>
+      <td>  &nbsp;            <p>Defra is gradually introducing new schemes under the provisions of the Agriculture Act 2020. The main part of this new approach is known as Environmental Land Management (ELM). Funding will also be provided for productivity improvements and innovation on farms.</p>
+        <p><i><span style="color: #055705;">The Financial Times said that the documents showed that England was also set to receive almost 50 per cent less than originally pledged, getting £1.56bn by 2024-25 instead of £3bn.</span></i></p>
+      </td>
+  </tr>
+</table>
+
+</div>
+
+<div id="2" class="tabcontent">
+  <span class="topright" onclick="this.parentElement.style.display='none'">&times;</span>
+<table>
+  <tr>
+    <td>Northern Ireland</td>
+      <td> &nbsp;             <p>Farmers in Northern Ireland are in a rather different position from those elsewhere in the UK because of the <a href="https://www.instituteforgovernment.org.uk/explainer/brexit-northern-ireland-protocol">Northern Ireland protocol</a>.</p>
+      </td>
+  </tr>
+</table>
+</div>
+
+
+<div id="3" class="tabcontent">
+  <span class="topright" onclick="this.parentElement.style.display='none'">&times;</span>
+<table>
+  <tr>
+    <td>Scotland</td>
+      <td> &nbsp;       <p>In August 2020, the Scottish parliament passed the <a href="https://www.parliament.scot/bills-and-laws/bills/agriculture-retained-eu-law-and-data-scotland-bill">Agriculture (Retained EU Law and Data) (Scotland) Act</a>, which gave ministers the power to alter the inherited CAP regime.
+                In August 2021, the Scottish government consulted on the future of agricultural support in Scotland and established the <a href="https://www.gov.scot/groups/agriculture-reform-implementation-oversight-board/">Agricultural Reform Implementation Board</a> (made up of farmers, crofters and conservationists) to advise on policy development.</p>
+            <p><i><span style="color: #055705;"><a href="https://www.gov.scot/news/eu-replacement-funding-60-percent-shortfall/">EU replacement funding 60% shortfall</a>&nbsp; Only £212 million was to Scotland over a three-year period, when EU funding would have been worth £549 million.</span></i></p>
+      </td>
+  </tr>
+</table>
+</div>
+
+<script>
+
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable"); // Corrected table ID
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
