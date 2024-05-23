@@ -1,0 +1,349 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0; /* Change the background color as needed */
+    padding: 10px 0;
+    z-index: 999; /* Ensures it's above other content */
+    transition: top 0.3s; /* Smooth transition when hiding/showing */
+}
+
+nav ul {
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left:5px;
+    margin-right: 40px;
+}
+
+nav ul li a {
+
+  font-family: "Gill Sans", monospace;/* Verdana is the preferred font, followed by generic sans-serif */
+
+
+    text-decoration: none;
+    color: #333; /* Change link color as needed */
+}
+
+/* Hide the table of contents when scrolled down */
+nav.hidden {
+    top: -50px; /* Adjust as needed to fully hide the table of contents */
+}
+
+p {
+    font-family: Verdana, monospace;
+  text-align: left;
+  width: 60%;
+  word-wrap: break-word;
+  color: #333;
+  padding: 5px;
+  margin: 20px auto;
+}
+
+.h3-style {
+    font-family: Verdana, Geneva,monospace;
+  text-align: left;
+  width: 60%;
+  word-wrap: break-word;
+  color: #333;
+  padding: 1px;
+  margin: 20px auto;
+}
+hr {
+    display: block;
+    width: 75%;
+    margin: auto;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid darkseagreen;
+
+    padding: 0;
+}
+h5 {
+  text-align: left;
+  width: 60%;
+  word-wrap: break-word;
+  color: #333;
+font-family: Verdana, Geneva,monospace;
+  padding: 1px;
+  margin: 20px auto;
+}
+
+a:link {
+  color: darkgreen;
+}
+a:hover {
+  color: forestgreen;
+}
+a:visited {
+  color: darkgreen;
+}
+
+
+.zero-style {
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 5px;
+  height:480px;
+  width:1000px;
+}
+
+.one-style {
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 5px;
+  height:480px;
+  width:1000px;
+}
+
+.two-style {
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 5px;
+  height:480px;
+  width:1000px;
+}
+
+.three-style {
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 5px;
+  height:480px;
+  width:1000px;
+}
+
+.four-style {
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.five-style {
+  padding: 20px;
+  border-radius: 5px;
+  height: 480px;
+          display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:720px;
+}
+.six-style {
+       display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.flex-container {
+
+      margin: 20px auto;
+  width: 60%;
+    display: flex;
+    justify-content: space-between; /* Aligns the child elements on opposite ends */
+    align-items: center; /* Vertically centers the children in the container */
+    padding: 5px; /* Add padding as necessary */
+}
+
+.six_button {
+    color: #ffffff; /* white text */
+    background-color: #4eb66d; /* green background */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px; /* Add padding to size the button */
+    width: 20%;
+}
+
+.text {
+  width: 60%;
+  word-wrap: break-word;
+  color: #333;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+
+    flex-grow: 1; /* Allows the paragraph to fill the space */
+}
+
+th {
+  text-align: left;
+}
+tr:hover {background-color: #c1eabc;}
+.annual-rate {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+    height: 5%;
+}
+
+.seven-style {
+  padding: 20px;
+  border-radius: 5px;
+  height: 480px;
+          display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:720px;
+}
+
+.eight-style {
+  padding: 20px;
+  border-radius: 5px;
+  height: 480px;
+          display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:720px;
+}
+
+
+
+.parallel0 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nine-style, .eleven-style {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
+  height: 320px;
+    width: 480px;
+  max-width: calc(40% - 10px);
+}
+
+
+
+.parallel1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ten-style, .twelve-style {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
+  height: 320px;
+    width: 480px;
+  max-width: calc(40% - 10px);
+}
+
+
+.fourteen-style {
+      padding: 20px;
+  border-radius: 5px;
+  height: 320px;
+          display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:810px;
+}
+
+.fourteen-button {
+        font-size: 16px;
+    color: #ffffff; /* white text */
+    background-color: #4eb66d; /* green background */
+    border: none;
+    border-radius: 25px; /* fully rounded ends */
+    cursor: pointer;
+    transition: all 0.3s ease; /* smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px; /* Add padding to size the button */
+    width: 20%;
+}
+
+.fifteen-style {
+  display: block;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+h2 {
+  text-align: left;
+  width: 60%;
+  word-wrap: break-word;
+  font-family:monospace;
+  font-size: 1.2rem;
+  padding: 1px;
+  margin: 10px auto;
+}
+
+
+.sixteen-style {
+    width: 60%;
+  margin: 0 auto;
+}
+
+
+.seventeen-style {
+    width: 60%;
+  margin: 0 auto;
+}
+
+.eighteen-style{
+      width: 60%;
+  margin: 0 auto;
+}
+
+.twentyone-style{
+         width: 60%;
+  margin: 0 auto;
+}
+.twentyfour-style {
+                height:360px;
+            width:60%;
+            margin:0 auto;
+}
+
+.section7-style {
+   line-height: 0.8;
+}
+
+.radar-style {
+      padding: 20px;
+  border-radius: 5px;
+  height: 480px;
+          display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:720px;
+}
+
+.twentyfive-style{
+         width: 60%;
+  margin: 0 auto;
+}
+
+.embed-style{
+          padding: 20px;
+  border-radius: 5px;
+  height: 300px;
+          display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:560px;
+}
+
+
+.trending-style{
+            padding: 20px;
+  border-radius: 5px;
+  height: 240px;
+          display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:1000px;
+}
