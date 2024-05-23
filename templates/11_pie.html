@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Dynamic Timeline Chart</title>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container11" style="height: 50%"></div>
+
+  <script type="text/javascript">
+    var dom11 = document.getElementById('container11');
+    var myChart11 = echarts.init(dom11, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+
+    var years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021'];
+    var data = {
+      'World': [19154299.02, 18461495.71, 19397997.73, 20748630.15, 20025798.74, 18155102.20, 18975654.87],
+      'Europe': [10959832.72, 10458663.35, 11051818.43, 11900829.39, 11238186.94, 10759831.35, 10187233.96],
+      'Central Asia': [80545.06, 106355.04, 118618.77, 132681.92, 130925.57, 143436.22, 161953.98],
+      'East Asia&Pacific': [2255887.72, 2308122.83, 2594360.92, 2750547.71, 2738551.11, 2402446.83, 2762074.02],
+      'North America': [2786896.09, 2784434.86, 2722837.45, 2857796.22, 2775439.94, 2364498.10, 2588426.46],
+      'Middle East&North Africa': [1040327.00, 983708.39, 1032375.10, 1127757.68, 1107989.34, 918773.25, 1088640.78],
+      'Latin America&Caribbean': [860587.25, 831236.65, 844890.77, 862643.19, 840921.72, 600982.35, 999653.99],
+      'Sub-Saharan Africa': [554000.03, 448301.91, 492351.85, 517463.61, 517454.21, 430842.95, 500087.70],
+      'South Asia': [195073.19, 200004.48, 230292.23, 271291.83, 306787.27, 195835.50, 269041.40]
+    };
+
+    function generateOptions() {
+      return years.map((year, index) => {
+        var seriesData = Object.keys(data).map(region => ({
+          value: data[region][index],
+          name: region
+        }));
+        return {
+          title: { text: year + ' Data' },
+          series: [{ data: seriesData }]
+        };
+      });
+    }
+
+    var option11 = {
+      baseOption: {
+        timeline: {
+          axisType: 'category',
+          autoPlay: true,
+          playInterval: 1500,
+          data: years
+        },
+        legend: {
+          top: 'bottom'
+        },
+        toolbox: {
+          show: true,
+          feature: {
+            dataView: { show: true, readOnly: false },
+            restore: { show: true },
+            saveAsImage: { show: true }
+          }
+        },
+        series: [
+          {
+            name: 'Nightingale Chart',
+            type: 'pie',
+            radius: [50, 250],
+            center: ['50%', '50%'],
+            roseType: 'area',
+            itemStyle: {
+              borderRadius: 8
+            }
+          }
+        ]
+      },
+      options: generateOptions()
+    };
+
+    if (option11 && typeof option11 === 'object') {
+      myChart11.setOption(option11);
+    }
+
+    window.addEventListener('resize', myChart11.resize);
+  </script>
+</body>
+</html>

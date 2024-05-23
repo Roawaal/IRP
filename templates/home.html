@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.1/axios.min.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+    <title>Home Page</title>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#section1">Agricultural Significance and Economic Contribution</a></li>
+                <li><a href="#section2">Agricultural Regional Profile</a></li>
+                <li><a href="#section3">UK's Overseas Trade</a></li>
+                <li><a href="#section4">Farm Subsidies Post-Brexit</a></li>
+                <li><a href="#section5">UK's Labour Market</a></li>
+                <li><a href="#section6">Brexit or Bremain: Public Opinions</a></li>
+                <li><a href="#section7">Other Key Contextual Factors</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+    <p></p>
+    <p><i><span style="color: #055705;font-size:25px;"><a href="https://en.wikipedia.org/wiki/Brexit">Brexit</a></span></i> &nbsp;
+        officially took place at 23:00 GMT on 31 January 2020 (00:00 1 February 2020 CET),
+        marked the end of the UK’s longstanding 47-year alliance with the European Union.
+        Now, after 4 years, British people are coming to realize the effects of Brexit on their own lives and livelihoods.
+    </p>
+    <p>Agriculture holds a significant economic position in the UK, providing for the agri-food sector and participating in direct sales. The impacts of Brexit are expected to profoundly affect the role of agriculture in the UK, given that the EU's Common Agricultural Policy has shaped UK farming policies since the 1970s.
+        Undoubtedly, these years has been a difficult period for these farmers, who have suffered with rising
+        costs across multiple fronts, including higher fuel and energy expenses, as well as increased prices for
+        fertilizers and animal feed. These financial pressures highlight the urgent need for greater support and
+        recognition from political and institutional stakeholders.
+    </p>
+    <p>This project aims to explore Brexit's wide-ranging effects on agricultral using diverse data analysis tools and techniques,
+        including Google Trends analysis, regression analysis, and time series data analysis to review and forecast agricultural factors such as agriculture’s Gross Value Added (GVA), Gross Domestic Product (GDP), trade and employments.
+    </p>
+
+        <section id="section1">
+        <p></p>
+            <h3 class="h3-style">Agricultural Significance and Economic Contribution</h3>
+        <p>Below section will apply datasets of UK's GDP, agriculture’s economic contribution and TIFF to discuss this general statement: <i><span style="color: #055705">Brexit’s overall effect on the UK economy and people’s living standards appears to be negative but uncertain, according to economists.</span></i></p>
+        <p>The data for the subsequent charts only extends to the year 2022 due to the delayed update of some official sources. Currently, the majority of these sources have available data only up to the year 2022. Moreover, only four years since the UK quit the EU, the exact costs remain unknown because the effects have not been immediate.</p>
+    <h3 class="h3-style">2000-2022 UK Gross domestic product at 2024 dollar prices<sup><a href="#note1">1</a></sup> and the percentages of 2012-2022 agriculture’s contribution to the UK economy (Gross Value Added at basic prices)<sup><a href="#note2">2</a></sup></h3>
+    <div id="container3" class="zero-style">{% include '0_agri_gdp.html' %}</div>
+    <p>The chart reveals that the percentages of UK's agricultural contribution to the total GDP fluctuates between 0.55% and 0.8%, with the highest value 0.76% in 2022
+        and the next highest in 2014 0.75%. Between 2014 and 2018, despite minor fluctuations, the overall trend was a decline, followed by a rebound and continuous
+        growth from 2018 to 2022. &nbsp;<i><span style="color: #055705">This seems to suggest that Brexit had a minimal or even positive impact on the development of UK agriculture, despite 2020 witnessing
+            the lowest total GDP in recent years.</span></i>
+    </p>
+
+    <h3 class="h3-style">Total income from farming in the United Kingdom (UK) from 2000 to 2022 in million GBP at 2022 prices<sup><a href="#note3">3</a></sup>, adjusted for inflation</h3>
+    <div id="container400" class="one-style">{% include '1_2000_2020TIFF.html' %}</div>
+
+    <p>Focused on the adjusted data, income generally shows an upward trend from 2000 to 2022, despite some fluctuations.
+        <i><span style="color: #055705">The total income in the UK from farming decreased from 2015 to 2016, when
+        Brexit was first announced, again in 2020, when Brexit occurred</span></i> Additionally, 2016’s income
+        jumped with a significant growth rate of 55.11% by 2015 and continuous growth in the subsequent two
+        years from 2020, with increase rate 29.13% and 11.03% respectively. In 2022, income peaked at 7.94
+        billion British pounds Therefore, it is proved that
+        &nbsp;<i><span style="color: #055705">  while Brexit initially led to a downturn in
+        income, the agricultural sector showed signs of recovery in the years that followed.</span></i>
+    </p>
+
+    </section>
+        <section id="section2">
+            <p></p>
+             <h3 class="h3-style">Agricultural Regional Profile</h3>
+    <p>Although Scotland, Wales, Northern Ireland are important contributors to Uk agricultural output in monetary terms,
+        their datasets are not as comprehensive or updated as England's datasets.
+    Since England accounts for a large share of the UK’s agricultural output, the data from its regions
+    can reliably reflect overall national trends and effects. This makes the information from England a solid
+    base for understanding how Brexit could change agricultural policies, economic impacts, and regional
+    agricultural activities throughout the UK.
+    </p>
+    <p>Other constituent countries' datasets can be found by below links</p>
+    <h5 class="h5-style"><a href="https://www.gov.scot/collections/total-income-from-farming/">Collection of total income from farming (TIFF) estimates for Scotland publications</a></h5>
+    <h5 class="h5-style"><a href="https://www.gov.wales/farm-incomes">Farm incomes in wales including forecasts</a></h5>
+    <h5 class="h5-style"><a href="https://www.daera-ni.gov.uk/articles/ni-agricultural-incomes">TIFF in Northern Ireland</a></h5>
+
+    <p></p>
+    <h3 class="h3-style">2017-2022 English TIFF line and pie charts separated by regions in millions GBP at 2022 prices<sup><a href="#note5">5</a></sup></h3>
+    <div id="container0_modified" class="three-style">{% include '3_regions2017_2022.html'%}</div>
+    <p>It is evident that all the regions of England show an upward trend in farming income over the years, with some variations in growth rate. The East of England shows a particularly
+    strong increase, suggesting a strong agricultural sector in that region with a size of 34% farm holdings
+    equal to or larger than 100 hectares. Most regions experienced a slight decline in income in 2020, followed by growth in the subsequent two years.
+        &nbsp;<i><span style="color: #055705"> This trend
+    may indicate the initial negative impact of Brexit on agriculture, followed by a recovery as
+    England’s regions benefited from favourable conditions or policies.</span></i>
+    </p>
+    <h3 class="h3-style">2017-2022 English TIFF map separated by regions in millions GBP at 2022 prices<sup><a href="#note5">5</a></sup></h3>
+    <h5 class="h5-style"><a href="/map">Go to Map</a></h5>
+
+    <div id="container2" class="four-style">
+        {% include '4_map.html' %}
+    </div>
+    </section>
+
+        <section id="section3">
+             <p></p>
+             <h3 class="h3-style">UK's Overseas Trade</h3>
+        <p>Since the UK has been a worldwide trading force, it is essential to evaluate the effects of Brexit on the
+        UK’s overseas trade in agricultural stuff, excluding other goods like material manufactures or fuels.
+        Annual changes of “Imports”, “Exports”, and “Trade Balance” values are preferred for
+        evaluation rather than quarterly’s, as the seasonal fluctuations in UK agriculture are significant
+    </p>
+    <p>Moreover, it will pay more attention to annual changes rather than quarterly's, as the seasonal fluctuations in UK agricultural are significant. For example, during the summer months,
+        the UK can grow plenty of its own produce like lettuces and soft berries such as raspberries and strawberries, but when the weather turns colder Britain is forced to rely much more on imports from the EU.
+    </p>
+    <h3 class="h3-style">United Kingdom's value of trade in food, feed and drink in million GDP at 2022 prices<sup><a href="#note6">6</a></sup></h3>
+    <p>Prices adjusted by ONS(Office for National Statistics) implied deflators for trade MRET(UK trade time series: Monthly value of UK exports and imports of goods and services by current price, chained volume measures and implied deflators)
+        <br />To better compare each year's values, it is necessary to adjust for the effects of economic inflation.
+    </p>
+    <div id="imexports" class="five-style">{% include '5_imexports.html' %}</div>
+    <p> Since the year 2000, there has been a generally consistent upward trend in
+        imports, exports and trade balance. It can be witnessed from the chart that
+        <i><span style="color: #055705">the adverse balance
+        of trade in 2020 was the largest in the past 23 years</span></i> and over the longer term it has widened
+        by 45.93% from £20.01 billion (in 2000) to £33.20 billion (in 2022) in real terms. Focused on 2019-
+        2021,there was a decline observed in both imports and exports. Nevertheless, by the year 2022, both
+        of them rebounded to the levels seen in 2019 (pre-pandemic and pre-Brexit).
+    </p>
+    <p>While the trade gap decreased in 2021 and 2022, there
+        is a noticeable overall trend of increasing imports of agri-foods into the UK. The resasons for that might
+        be imports including a range of products from lightly processed foods such as meat and butter, to highly
+        processed items like jams, sweets, and alcohol, as well as unprocessed foods such as fresh fruits and
+        vegetables, cereals, and eggs.
+    </p>
+
+    <h3 class="h3-style">United Kingdom's value of trade in food, feed and drink with EU/Non-EU countries in millions GDP at 2022 prices<sup><a href="#note7">7</a></sup></h3>
+    <div id="eutrade" class="six-style">{% include '6_eutrade.html' %}</div>
+    <p>The statement <i><span style="color: #055705;">"the EU remains the UK’s largest trade partner, providing more than 70
+        percent of the UK’s agricultural imports"</span></i>can be evidently proved by the above chart.
+        This visual representation confirms the EU’s dominant position in the UK’s agricultural trade landscape,
+        emphasizing the importance of this relationship in the context of the UK’s food supply chain. While
+        it is clear that a substantial volume of the UK’s agricultural products are imported from the EU, the
+        proportion of exports from the UK to the EU is notably smaller when in comparison.
+    </p>
+
+    <div class="flex-container">
+        <p class="text">Based on the above data and for better analyzing the changes from 2019 to 2022</p>
+        <div id="customButton" class="six_button">{% include '6_eutrade.html' %}</div>
+        <p class="text">Click here to download the chart Annual change rates</p>
+        <button class="six_button" onclick = "startDownload()">Download</button>
+    </div>
+
+   <script>
+      async function startDownload() {
+         // get data using axios
+         let results = await axios({
+            url: 'https://github.com/Roawaal/IRP/blob/main/Fig/Annual%20rate.png',
+            method: 'GET',
+            responseType: 'blob'
+         })
+         let hidden_a = document.createElement('a');
+         hidden_a.href = window.URL.createObjectURL(new Blob([results.data]));
+         hidden_a.setAttribute('download', 'download_image.jpg');
+         document.body.appendChild(hidden_a);
+         hidden_a.click();
+      }
+   </script>
+
+        <table class="annual-rate">
+            <caption>Annual change rates</caption>
+            <tr>
+                <th scope="row"></th>
+                <th>2020 to 2019</th>
+                <th>2021 to 2020</th>
+                <th>2022 to 2021</th>
+                <th>2022 to 2019</th>
+            </tr>
+
+            <tr>
+                <th>exports to EU</th>
+                <td>-7.37%</td>
+                <td>-14.76%</td>
+                <td>+11.48%</td>
+                <td>-11.98%</td>
+            </tr>
+
+            <tr>
+                <th>exports to Non-EU</th>
+                <td>-10.89%</td>
+                <td>+8.90%</td>
+                <td>+8.31%</td>
+                <td>+10.89%</td>
+            </tr>
+            <tr>
+                <th>imports from EU</th>
+                <td>-7.61%</td>
+                <td>-10.37%</td>
+                <td>+8.31%</td>
+                <td>-3.66%</td>
+            </tr>
+            <tr>
+                <th>imports from Non-EU</th>
+                <td>+0.15%</td>
+                <td>+7.60%</td>
+                <td>-0.81%</td>
+                <td>+6.89%</td>
+            </tr>
+        </table>
+    <p>Focused on the chart and the table during four years, it suggests that
+        <i><span style="color: #055705;">Brexit may have a more negative impact on trade with the EU,</span></i> particularly affecting exports, while
+        <i><span style="color: #055705;">trade with non-EU countries appears to be less impacted and shows signs of recovery or growth.</span></i>
+        This indicates a potential shift in the UK’s trade relationships, turning from the EU towards broader global markets.
+    </p>
+    <p>However, these changes are not significant as the Brexit negotiations are still in the early stages, the ultimate agreement might differ
+        from the policy changes currently under discussion.
+    </p>
+    <h3 class="h3-style">United Kingdom Food Products Exports(up), Imports(down) by regions 2015-2021 at each year's prices (US$ Thousand)<sup><a href="#note9">9</a></sup></h3>
+    <p>The following data is sourced from another authoritative organization worldbank, clearly illustrating the food import and export relationships between the UK and various regions, serving as a supplement to the dataset from HMRC.</p>
+
+<div class="parallel0">
+    <div id="container8" class="nine-style">{% include '9_worldexports.html' %}</div>
+    <div id="container11" class="eleven-style">{% include '11_pie.html' %}</div>
+</div>
+<p></p>
+<div class="parallel1">
+    <div id="container9" class="ten-style">{% include '10_worldimports.html' %}</div>
+    <div id="container12" class="twelve-style">{% include '12_pie.html' %}</div>
+</div>
+
+    <p>These charts provide a summary of the UK’s agricultural trade relations with the EU and
+        various global regions. The importance of the EU is evident, however, <i><span style="color: #055705;">the growing position of other
+            regions, especially East Asia and North America, highlights a shifting focus.</span></i>
+    </p>
+    <p>Before Brexit, overseas trade with the EU was protected by high tariffs and significant non-market access restrictions, which
+        are prone to produce challenges when the UK imports more food from non-EU countries.
+        Considering the significant market saturation in the EU, the improved competitive ability in non-EU
+        markets is a positive development and holds promise for the long term [34]. Especially, an advantage
+        of Brexit is the ability of the UK to actively pursue Free Trade Agreements (FTAs) with other nations.
+    </p>
+    <h3 class="h3-style">United Kingdom Food Products Top12 Exports(up), Imports(down) by countries 2015-2021 at each year's prices (US$ Thousand)<sup><a href="#note10">10</a></sup></h3>
+    <div id="chart0" class="seven-style">{% include '7_exports.html' %}</div>
+    <div id="chart1" class="eight-style">{% include '8_imports.html' %}</div>
+    <p>It appears that Ireland remains a top destination for the UK’s exports but with decreased export values. Additionally, the
+        principal destinations for exports were Ireland, France, the USA, Netherlands and Germany as well as
+        the main countries of dispatch for imports into the UK were the Netherlands, France, Ireland, Germany
+        and Italy. There haven’t been any major changes except for in Exports, China ranked 5 in the year
+        2021. After taking back control of its trade policies, the UK started talking with Asia and other countries
+        to set up double-sided free trade agreements (FTAs).
+    </p>
+        </section>
+
+
+        <section id="section4">
+               <p></p>
+             <h3 class="h3-style">Farm Subsidies Post-Brexit</h3>
+    <p>CAP (EU's Common Agricultural Policy) is a system of agricultural subsidies and programmes covering farming, environmental measures and rural development.
+        Having left the EU, the UK is now free to design its own agricultural policy to replace the CAP, although key elements of the CAP-based system currently remain in place.</p>
+    <p>Before Brexit, the government promised to match EU funding.<sup><a href="#note11">11</a></sup>
+    <br />Boris Johnson’s 2019 election manifesto had promised that post-Brexit replacement funding would “at a minimum match the size” of EU funds in “each nation” of the UK.
+    <p><i><span style="color: #055705;">However, the critical question remains: Were these promises fulfilled?</span></i></p>
+
+    <h3 class="h3-style">2010-2022 All CAP payments in Euros millions by funding stream for the United Kingdom, shows payments after deduction for modulation where appropriate.<sup><a href="#note12">12</a></sup></h3>
+    <div id="container14" class="fourteen-style">{% include '14_ukcap.html' %}</div>
+
+    <p>The CAP is structured around two main components:<br />
+        1) Pillar 1: including direct support and market support<br />
+        2) Pillar 2: focusing on rural development, which includes the European Agricultural Fund for Rural
+        Development (EAFRD) and Co-financing.
+    </p>
+    <p>It indicates a shift in total agricultural payments following Brexit, suggesting the reconstruction in funding, correlating with the UK’s departure from the EU structures.
+        <i><span style="color: #055705;">The UK received around €4 billion in CAP funds each year before Brexit</span></i>
+        and nearly 80% of CAP funds is spent on Direct Payments to farmers under Pillar 1. It shows that the Direct Payments (Pillar 1) are the main system for providing income support
+        to farm households within the CAP, but it ended in 2020 and legacy schemes have switched to UK funding.
+    </p>
+    <h3 class="h3-style">2010-2022 All CAP payments in Euros million by funding stream for United Kingdom separated by regions<sup><a href="#note12">12</a></sup></h3>
+    <div id="pivot-container" class="fifteen-style">{% include '15_cap.html' %}</div>
+    <p>The chart shows that England consistently received the highest CAP payments compared to other
+        regions throughout the entire period. The reason might be that the agricultural policy is managed
+        separately by each part of the UK, therefore, the Agriculture Bill mainly applies to England. The
+        payments to England show a more marked decrease post-Brexit, particularly notable in 2021. Scotland,
+        Wales, and Northern Ireland received lower payments than England, but these also followed a declining
+        trend. The payments to Scotland and Wales show gradual decreases, while Northern Ireland’s payments
+        appear to remain stable in the latter years.
+    </p>
+    <p>For more detailed CAP payments, use this link: <a href="https://cap-payments.defra.gov.uk/Search.aspx">Payments Search</a></p>
+
+    <p>When the UK was a member of the EU, the four governments were responsible for administering subsidies according to EU rules. Now, outside the EU, these administrations have the flexibility to develop their own subsidy schemes.
+        <br />Below are some policies introduced by each region's governments and we'll see <i><span style="color: #055705;"> whether the funding is on the same level before Brexit</span></i>.
+    </p>
+    <div class="sixteen-style">{% include '16_regions.html' %}</div>
+    <h3 class="h3-style">Loss of funding to Wales as a result of the UK Government’s arrangements for replacement EU funding in millions in 2022 prices<sup><a href="#note14">14</a></sup></h3>
+            <p>2021-22 funding awarded through the Community Renewal Fund (the pilot for the UKSPF)</p>
+    <div id="my-pivot-container" class="seventeen-style">{% include '17_welch.html' %}</div>
+        </section>
+    <p>It seems that way Northern Ireland is likely to be the most negatively impacted country during
+        the Brexit process and deserves particular attention. At the same time, the other three nations have
+        experienced significantly negative effects on agricultural subsidies due to Brexit.
+    </p>
+
+        <section id="section5">
+                    <p></p>
+             <h3 class="h3-style"> UK's Labour Market</h3>
+           <p>Brexit means the UK leaves the EU’s market and free movement principles, making it more difficult
+        for workers from other EU countries to enter the UK to work. Before this, citizens of EU countries
+        could freely enter the UK to work and live individually, but after Brexit, these workers met stricter visa
+        requirements. It may seem surprising that the agri-food sector’s increased dependence on migrant labour has occurred
+        at a time when many countries in the global North are trying to curb immigration levels. However, as
+        noted, 'even politicians who oppose immigration often make an exception for seasonal farm workers'.
+        While migrant labour has been a focal point in discussions about the post-Brexit agri-food system, the
+        same level of attention has not been given to the migrant labourers themselves.
+           </p>
+    <h3 class="h3-style">Yearly counts of payrolled employments in the United Kingdom by industry for UK, EU and non-EU nationals in total and in a specific category: Agriculture, Forestry and Fishing<sup><a href="#note15">15</a></sup></h3>
+    <div id="myRadarChart" class="radar-style">{% include '100.html' %}</div>
+    <p>National Farmers Union (NFU) reported that the 2022 fruit and vegetable harvest has been severely
+        affected due to a shortage of workers available to pick the crops, resulting in more than £22 million. It
+        can be suggested by the above chart, which clearly shows that <i><span style="color: #055705;">over the past few years, the changes in the
+            agricultural workforce have been more significant than in the overall workforce.</span></i> Specifically, the number
+        of non-EU workers has increased across all categories, not just in agriculture. While the number of UK
+        and EU workers has decreased, specifically the EU workers in agriculture. This trend may reflect shifts
+        in employment patterns due to changes in immigration policies, labour laws influenced by Brexit
+        and other factors illustrated before.</p>
+
+    <h3 class="h3-style">Monthly counts of payrolled employments in the United Kingdom by industry for EU and non-EU nationals in total<sup><a href="#note15">15</a></sup></h3> </h3>
+    <div id="container24" class="twentyfour-style">{% include '24_workers.html' %}</div>
+            <p>Throughout the displayed period in the graph, the employment numbers for non-EU workers show
+        a general increase, sharply rising starting around 2020 and continuing in 2021. In contrast, the numbers
+        for EU workers remain relatively stable and even show a slight downward trend towards the end of the
+        period.
+        Around January 2022, the data point indicates that the numbers of EU workers and non-EU workers
+        converged. This significant difference might reflect various socio-economic factors, such as changes in
+        immigration policies, the impact of Brexit, economic conditions, or sector-specific employment trends.</p>
+
+
+        </section>
+
+        <section id="section6">
+             <p></p>
+    <h3 class="h3-style">Brexit or no Brexit: Public opinions</h3>
+
+    <h3 class="h3-style">Farmer Opinion</h3>
+            <p>Farmers Weekly surveyed in 2016 asking 577 farmers how they were going to vote on Brexit and
+                the farming vote outcome was <i><span style="color: #055705;">58% Leave, 31% Remain and 11% didn’t vote</span></i>. Surprisingly, it
+                    is opposite to Country Land & Business Association (CLA)’s expectations because they expected the
+                farming community would be overwhelmingly in favour of staying in the EU.</p>
+            <p>Farmers who intended to vote ”remain” expressed concerns about the future of farm subsidies and access to markets, both of which could significantly affect their profits if the UK were to leave the EU.
+                    The below figure lists the several factors highlighted by the remaining voters at the farm level.
+            </p>
+            <div class="embed-style"><div class="infogram-embed" data-id="f223694a-e44c-4170-978f-880bd43d5880" data-type="interactive" data-title="Brexit - why worse?"></div><script>!function(e,n,i,s){var d="InfogramEmbeds";var o=e.getElementsByTagName(n)[0];if(window[d]&&window[d].initialized)window[d].process&&window[d].process();else if(!e.getElementById(i)){var r=e.createElement(n);r.async=1,r.id=i,r.src=s,o.parentNode.insertBefore(r,o)}}(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");</script></div>
+            <p></p>
+            <p></p>
+               <p></p>
+            <p></p>
+            <p>Seven years on from the 2016 survey, Farmers Weekly investigated farmers’ opinions again indicating that
+            <i><span style="color: #055705;">8% of them are willing to transfer from “leave” to “remain”</span></i>if they could vote again.
+            Moreover,<i><span style="color: #055705;">the vast majority (83%) said Brexit has been worse than expected </span></i>because it is not
+            a good idea to cut ties with the largest free-trade area that’s right next to the UK.
+            </p>
+  <h3 class="h3-style">How well or badly do you think the government is handling the following issues? Britain's exit from the EU<sup><a href="#note16">16</a></sup></h3>
+    <div id="tabs21" class="twentyone-style">{% include '21_tab.html' %}</div>
+
+            <p>Figure 'I voted to remain' shows that over the period from June 2019
+        to March 2024, there is a relatively stable trend showing a significant majority consistently thinks the
+        government is handling Brexit badly, with a small percentage viewing the government’s actions favourably,
+        and a minor proportion undecided. There are more fluctuations in Figure 'I voted to leave' and early in the timeline,
+        opinions vary widely but then converge somewhat. Around early 2021, there was a noticeable surge in
+        negative opinions, which then reduced but still remains the dominant sentiment. <i><span style="color: #055705;">Along with remaining
+        voters, both indicate a persistent challenge for the government in managing public perception and the
+                    actual implications of Brexit.</span></i></p>
+
+        </section>
+
+    <section id="section7">
+                    <p></p>
+             <h3 class="h3-style">Other Key Contextual Factors</h3>
+            <p>Clearly, farm businesses have been affected by more than just Brexit over the past years – the global
+pandemic, political upheavals in Westminster and the war in Ukraine have all played a major part in
+farming’s fortunes. These events described in below chart highlight the fragility of the British food supply
+chain and emphasize the crucial role that dedicated British farmers play in maintaining it.
+        In the following years, the UK also experienced significant global events and
+        extreme weather(heatwave/storms/......) conditions<sup><a href="#note4">4</a></sup></a>.</p>
+    <h3 class="h3-style">Impactful Global/Domestic Events on UK Agriculture from 2020 to 2022</h3>
+    <h5 class="h5-style"><a href="/event">Go to Events</a></h5>
+    <div id="event11">{% include '2_events.html' %}</div>
+        <p>This section will briefly discuss Brexit and COVID-19’s influence because <i><span style="color: #055705;">they are both two events
+            of global significance for agriculture and the food chain and occurred close in time.</span></i></p>
+        <h3 class="h3-style">Google Trends of Brexit and COVID-19 From 2015/02/04 to 2024/05/23 Under the Agriculture and Forestry Category</h3>
+    <div class="trending-style">
+        <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3728_RC01/embed_loader.js"></script>
+        <script type="text/javascript">
+            trends.embed.renderExploreWidget("TIMESERIES", {
+                "comparisonItem": [
+                    {"keyword": "/g/1203lq0mw", "geo": "GB", "time": "2015-04-02 2024-05-23"},
+                    {"keyword": "/g/11j2cc_qll", "geo": "GB", "time": "2015-04-02 2024-05-23"}
+                ],
+                "category": 46,
+                "property": ""
+            }, {
+                "exploreQuery": "cat=46&date=2015-04-02%202024-05-23&geo=GB&q=%2Fg%2F1203lq0mw,%2Fg%2F11j2cc_qll&hl=en-GB",
+                "guestPath": "https://trends.google.com:443/trends/embed/"
+            });
+        </script>
+    </div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    <p>According to the information, the general
+public was most engaged in Brexit in 2016 and 2020, when the Brexit announcement was made and the
+transitional phase ended, respectively. By the end of 2021, there are no Brexit-related searches and in
+contrast, COVID-19 searches began in 2020 and accelerated in 2021. Compared with these two figures,
+searches related to Brexit had a higher number of searches in the agricultural category than all categories
+        while searches related to Covid-19 were similar. </p>
+        <p>It suggests that
+        <i><span style="color: #055705;">Brexit has been a particularly pressing concern for those in the agricultural sector,</span></i>
+possibly due to worries about changes in
+trade agreements, regulations, and subsidies that directly impact farming and food production.
+    </p>
+
+
+
+    </section>
+        <div class="section7-style">
+    <p><strong>Data from:</strong></p>
+    <p id="note1"><sup>1</sup> https://www.imf.org/external/datamapper/NGDPD@WEO/GBR?year=2024</p>
+    <p id="note2"><sup>2</sup> worldbank.org</p>
+    <p id="note3"><sup>3</sup> Defra; GOV.UK</p>
+    <p id="note4"><sup>4</sup> https://www.metoffice.gov.uk/weather/learn-about/past-uk-weather-events </p>
+    <p id="note5"><sup>5</sup> https://www.gov.uk/government/statistics/agricultural-facts-england-regional-profiles
+    <br /> The data of London is included in the South East region
+    </p>
+    <p id="note6"><sup>6</sup> HMRC</p>
+    <p id="note7"><sup>7</sup> HMRC</p>
+    <p id="note8"><sup>8</sup> ers.usda.gov</p>
+    <p id="note9"><sup>9</sup> worldbank.org</p>
+    <p id="note10"><sup>10</sup> worldbank.org</p>
+    <p id="note11"><sup>11</sup> https://www.gov.uk/government/news/government-kickstarts-26-billion-investment-in-communities-as-uk-takes-back-control-of-eu-funding</p>
+    <p id="note12"><sup>12</sup> https://assets.publishing.service.gov.uk/media/6215ff49e90e0710b9a8bdff/AUK2020_22feb22.pdf </p>
+    <p id="note14"><sup>13</sup> https://www.gov.wales/written-statement-loss-funding-wales-result-uk-governments-arrangements-replacement-eu-funding</p>
+    <p id="note15"><sup>14</sup> https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-and-industry-from-july-2014-to-december-2022/uk-payrolled-employments-by-nationality-region-and-industry-from-july-2014-to-december-2022</p>
+    <p id="note16"><sup>15</sup> https://yougov.co.uk/_pubapis/v5/uk/trackers/how-the-government-is-handling-the-issue-of-brexit-in-the-uk</p>
+
+        </div>
+    </main>
+
+    <div>{% include 'footer.html' %}</div>
+</body>
+
+</html>

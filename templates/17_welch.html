@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexmonster Pivot Table with Inline Data</title>
+    <link rel="stylesheet" href="https://cdn.flexmonster.com/flexmonster.css">
+</head>
+<body>
+
+<div id="my-pivot-container"></div>
+
+<script src="https://cdn.flexmonster.com/flexmonster.js"></script>
+<script>
+new Flexmonster({
+    container: "#my-pivot-container",
+    componentFolder: "https://cdn.flexmonster.com/",
+    licenseFilePath: "https://cdn.flexmonster.com/jsfiddle.charts.key", // Ensure this is the correct license key path for your use case
+    toolbar: true,
+    height: 370,
+         width: 880,
+    report: {
+        dataSource: {
+            type: "json",
+    data:[
+    {"Period":"2O2O","UK SPF spending profile":null,"Wales SPF allocation":null,"Funding if Wales remained in the EU":null,"EU farm funding shortfall":42,"Total shortfall to Wales":42},
+    {"Period":"Jan – Mar 2O21","UK SPF spending profile":null,"Wales SPF allocation":null,"Funding if Wales remained in the EU":79,"EU farm funding shortfall":null,"Total shortfall to Wales":79},
+    {"Period":"2O21-22","UK SPF spending profile":200,"Wales SPF allocation":47,"Funding if Wales remained in the EU":316,"EU farm funding shortfall":95,"Total shortfall to Wales":364},
+    {"Period":"2O22-23","UK SPF spending profile":429,"Wales SPF allocation":89,"Funding if Wales remained in the EU":329,"EU farm funding shortfall":85,"Total shortfall to Wales":325},
+    {"Period":"2O23-24","UK SPF spending profile":690,"Wales SPF allocation":153,"Funding if Wales remained in the EU":337,"EU farm funding shortfall":21,"Total shortfall to Wales":205},
+    {"Period":"2O24-25","UK SPF spending profile":1500,"Wales SPF allocation":343,"Funding if Wales remained in the EU":343,"EU farm funding shortfall":0,"Total shortfall to Wales":0},
+    {"Period":"Total","UK SPF spending profile":2819,"Wales SPF allocation":632,"Funding if Wales remained in the EU":1404,"EU farm funding shortfall":243,"Total shortfall to Wales":1015}
+]
+        },
+        options: {
+            grid: {
+                type: "flat"
+            }
+        },
+        slice: {
+            columns: [
+                { uniqueName: "Period" },
+                { uniqueName: "UK SPF spending profile" },
+                { uniqueName: "Wales SPF allocation" },
+                { uniqueName: "Funding if Wales remained in the EU" },
+                { uniqueName: "EU farm funding shortfall" },
+                { uniqueName: "Total shortfall to Wales" },
+            ]
+        },
+        formats: [{
+            name: "Currency Format",
+            thousandsSeparator: ",",
+            decimalSeparator: ".",
+            decimalPlaces: 2,
+            currencySymbol: "$"
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

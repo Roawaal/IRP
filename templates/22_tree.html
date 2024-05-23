@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+</head>
+<body>
+<div id="container22" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script>
+$(document).ready(function() {
+
+   var colorAxis = {
+      min: 0,
+      max: 6,
+      minColor: '#FFFFFF',
+      maxColor: Highcharts.getOptions().colors[0]
+   };
+
+   var series= [{
+     type: "heatmap",
+     data: [{
+        x: 0,
+        y: 0,
+        value: 6
+     }, {
+        x: 0,
+        y: 1,
+        value: 6
+     }, {
+        x: 0,
+        y: 2,
+        value: 4
+     }, {
+        x: 0,
+        y: 3,
+        value: 3
+     }, {
+        x: 0,
+        y: 4,
+        value: 2
+     }, {
+        x: 0,
+        y: 5,
+        value: 2
+     }, {
+        x: 0,
+        y: 6,
+        value: 1
+     }]
+   }];
+
+   var json = {};
+   json.colorAxis = colorAxis;
+   json.series = series;
+
+   $('#container22').highcharts(json);
+});
+</script>
+</body>
+</html>

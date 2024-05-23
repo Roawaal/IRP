@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+  <title>Chart Zoom Example</title>
+       <style>
+        #eutrade {
+            height:270px;
+        width:810px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+            button{
+      font-size: 16px;
+      color: #ffffff; /* white text */
+      background-color: #4eb66d;
+      border: none;
+      border-radius: 25px; /* fully rounded ends */
+      cursor: pointer;
+      transition: all 0.3s ease; /* smooth transition */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="eutrade" style="height: 90%"></div>
+
+        <button id="customButton">Zoom to 2019-2022</button>
+
+  <script src="https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+  <script type="text/javascript">
+    var dom10 = document.getElementById('eutrade');
+    var myChart10 = echarts.init(dom10, null, {renderer: 'canvas', useDirtyRect: false});
+    var app = {};
+
+    var option10 = {
+      tooltip: {trigger: 'axis'},
+      legend: {data: ['exports to EU', 'imports from EU', 'exports to Non-EU', 'imports from Non-EU']},
+      grid: {left: '3%', right: '4%', bottom: '3%', containLabel: true},
+      toolbox: {
+        show: true,
+        feature: {
+          dataView: {show: true, readOnly: false},
+          magicType: {show: true, type: ['line', 'bar']},
+          restore: {show: true},
+          saveAsImage: {show: true}
+        }
+      },
+            dataZoom: [{type: 'slider', start: 0, end: 100, bottom: 10}],
+
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022']
+      },
+      yAxis: {type: 'value', min: 0, max: 45000, interval: 5000},
+      series: [
+        {name: 'exports to EU', type: 'line', data: [9243, 8567, 9365, 9778, 9976, 10256, 10740, 11692, 11756, 11878, 12810, 13279, 13229, 12998, 13589, 14105, 14304, 14532, 15152, 15721, 14562, 12412, 13837],
+
+              markPoint: {
+        symbolSize: 1, // Set to 1 or 0 to make symbols invisible if you just want text
+        label: {
+            normal: {
+                 show: true,
+                formatter: function(params) {
+                    // Custom text based on the point name
+                    if (params.name === 'Exports to EU in 2020') {
+                        return '-7.37%';
+                    } else if (params.name === 'Exports to EU in 2021') {
+                        return '-14.76%';
+                    } else if (params.name === 'Exports to EU in 2022') {
+                        return '+11.48%';
+                    }
+                },
+                position: 'left', // Position label right of the markPoint
+                textStyle: {
+                     color: 'black', // You can set text style here
+                    backgroundColor: 'white'
+                }
+            }
+        },
+                data: [
+                    { xAxis: '2020', yAxis: '14562', name: 'Exports to EU in 2020' },
+                    { xAxis: '2021', yAxis: '12412', name: 'Exports to EU in 2021' },
+                    { xAxis: '2022', yAxis: '13837', name: 'Exports to EU in 2022' }
+                ]
+            }
+        },
+        {name: 'imports from EU', type: 'line', data: [20188, 22038, 23275, 25208, 27113, 28964, 30363, 31318, 31050, 31357, 32183, 33400, 34838, 36616, 37393, 38883, 39695, 40474, 41808, 41922, 41603, 37289, 40386],
+               markPoint: {
+        symbolSize: 1, // Set to 1 or 0 to make symbols invisible if you just want text
+        label: {
+            normal: {
+               show: true,
+                formatter: function(params) {
+                    // Custom text based on the point name
+                    if (params.name === 'Imports from EU in 2020') {
+                        return '-7.61%';
+                    } else if (params.name === 'Imports from EU in 2021') {
+                        return '-10.37%';
+                    } else if (params.name === 'Imports from EU in 2022') {
+                        return '+8.31%';
+                    }
+                },
+                position: 'right', // Position label right of the markPoint
+                textStyle: {
+                    color: 'black', // You can set text style here
+                    backgroundColor: 'white'
+                }
+            }
+        },
+                data: [
+                    { xAxis: '2020', yAxis: '41603', name: 'Imports from EU in 2020' },
+                    { xAxis: '2021', yAxis: '37289', name: 'Imports from EU in 2021' },
+                    { xAxis: '2022', yAxis: '40386', name: 'Imports from EU in 2022' }
+                ]
+            }
+        },
+        {name: 'exports to Non-EU', type: 'line', data: [4895, 4659, 4573, 5116, 4852, 4881, 4844, 4972, 5451, 5640, 6388, 7163, 7284, 7377, 8136, 8758, 9164, 9108, 9247, 10000, 8911, 9704, 11098],
+
+              markPoint: {
+                  symbolSize: 1, // Set to 1 or 0 to make symbols invisible if you just want text
+                  label: {
+                      normal: {
+                           show: true,
+                          formatter: function (params) {
+                              // Custom text based on the point name
+                              if (params.name === 'Exports to Non-EU in 2020') {
+                                  return '-10.89%';
+                              } else if (params.name === 'Exports to Non-EU in 2021') {
+                                  return '+8.90%';
+                              } else if (params.name === 'Exports to Non-EU in 2022') {
+                                  return '+8.31%';
+                              }
+                          },
+                          position: 'right', // Position label right of the markPoint
+                          textStyle: {
+                              color: 'black', // You can set text style here
+                    backgroundColor: 'white'
+                          }
+                      }
+                  },
+                  data: [
+                      {xAxis: '2020', yAxis: '8911', name: 'Exports to Non-EU in 2020'},
+                      {xAxis: '2021', yAxis: '9704', name: 'Exports to Non-EU in 2021'},
+                      {xAxis: '2022', yAxis: '11098', name: 'Exports to Non-EU in 2022'}
+                  ]
+              }},
+        {
+    name: 'imports from Non-EU',
+    type: 'line',
+    data: [13859, 15343, 15608, 15895, 16026, 16141, 16840, 17329, 17554, 16691, 16427, 16371, 15316, 15270, 15834, 16187, 16798, 16786, 16685, 16606, 16631, 17895, 17750],
+    markPoint: {
+        symbolSize: 1, // Set to 1 or 0 to make symbols invisible if you just want text
+        label: {
+            normal: {
+               show: true,
+                formatter: function(params) {
+                    // Custom text based on the point name
+                    if (params.name === 'Imports from Non-EU in 2020') {
+                        return '+0.15%';
+                    } else if (params.name === 'Imports from Non-EU in 2021') {
+                        return '+7.60%';
+                    } else if (params.name === 'Imports from Non-EU in 2022') {
+                        return '-0.81%';
+                    }
+                },
+                position: 'right', // Position label right of the markPoint
+                textStyle: {
+                    color: 'black', // You can set text style here
+                    backgroundColor: 'white'
+                }
+            }
+        },
+        data: [
+            { xAxis: '2020', yAxis: 16631, name: 'Imports from Non-EU in 2020' },
+            { xAxis: '2021', yAxis: 17895, name: 'Imports from Non-EU in 2021' },
+            { xAxis: '2022', yAxis: 17750, name: 'Imports from Non-EU in 2022' },
+        ]
+    }},
+    ]};
+
+    if (option10 && typeof option10 === 'object') {
+      myChart10.setOption(option10);
+    }
+
+    window.addEventListener('resize', myChart10.resize);
+
+            document.getElementById('customButton').onclick = function() {
+      myChart10.dispatchAction({
+        type: 'dataZoom',
+        startValue: '2019',
+        endValue: '2022'
+      });
+        };
+
+  </script>
+</body>
+</html>

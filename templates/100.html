@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Radar Chart Visualization</title>
+    <style>
+        #myRadarChart {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myRadarChart"></div>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var radarDom = document.getElementById('myRadarChart');
+            var radarChart = echarts.init(radarDom);
+            var radarOptions;
+
+            const data2015 = [25217400, 151400, 2212900, 26800, 1760200, 2300];
+            const data2016 = [25386500, 151400, 2406100, 26800, 1813800, 2200];
+            const data2017 = [25629300, 152700, 2520900, 27800, 1886900, 2200];
+            const data2018 = [25798400, 154000, 2590800, 27200, 1974400, 2200];
+            const data2019 = [25895000, 156600, 2637700, 26900, 2110600, 2700];
+            const data2020 = [25039100, 153900, 2449900, 24200, 2122600, 3300];
+            const data2021 = [26078700, 161400, 2477000, 22400, 2426800, 5300];
+            const data2022 = [26356000, 159800, 2472100, 21300, 2969200, 7400];
+
+            radarOptions = {
+                tooltip: {},
+                legend: {
+                    data: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'],
+                    orient: 'vertical',
+                    left: 10
+                },
+                radar: {
+                    indicator: [
+                        { name: 'UK', max: 27000000 },
+                        { name: 'UK.Agri', max: 160000 },
+                        { name: 'EU', max: 2700000 },
+                        { name: 'EU.Agri', max: 30000 },
+                        { name: 'Non-EU', max: 3000000 },
+                        { name: 'Non-EU.Agri', max: 8000 }
+                    ]
+                },
+                series: [{
+                    name: 'Data by Year',
+                    type: 'radar',
+                    data: [
+                        { value: data2015, name: '2015' },
+                        { value: data2016, name: '2016' },
+                        { value: data2017, name: '2017' },
+                        { value: data2018, name: '2018' },
+                        { value: data2019, name: '2019' },
+                        { value: data2020, name: '2020' },
+                        { value: data2021, name: '2021' },
+                        { value: data2022, name: '2022' }
+                    ]
+                }]
+            };
+
+            radarChart.setOption(radarOptions);
+        });
+    </script>
+</body>
+</html>

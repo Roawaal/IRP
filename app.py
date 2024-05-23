@@ -11,7 +11,9 @@ def home():
 def chart():
     return render_template('4_map.html')
 
-
+@app.route('/event')
+def event():
+    return render_template('2_events.html')
 
 if __name__ == '__main__':
     app.run()
