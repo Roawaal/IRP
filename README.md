@@ -1,7 +1,12 @@
 # Web Application for Analyzing and Visualizing Impacts of Brexit on UK Agriculture Using Open Datasets
 
-**Overleaf**: [Dissertation](https://www.overleaf.com/project/65f469fd878e03c63d0b8023)
+Website:  https://brexit.pythonanywhere.com/
 
+## Docker:
+```
+docker build -t brexit .
+docker run -it --name access-api -p 8080:8080 brexit
+```
 ## Home
 
 ## Total Income From Farming
@@ -12,8 +17,6 @@ Total income from farming in the United Kingdom (UK) from 2000 to 2022 in millio
 
 
 ## Agricultural Regional Profile
-
-Impactful Global/Domestic Events on UK Agriculture from 2020 to 2022
 
 2017-2022 English TIFF line and pie charts separated by regions in millions GBP at 2022 prices
 
@@ -52,5 +55,9 @@ How well or badly do you think the government is handling the following issues? 
 Farmer Opinion
 
 Google Trend
+
+## Other Key Contextual Factors
+
+Impactful Global/Domestic Events on UK Agriculture from 2020 to 2022
 
 ##  References and Data From:
